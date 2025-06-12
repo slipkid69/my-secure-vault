@@ -3,36 +3,6 @@
 
 <html lang="en">
 <head>
-<style>
-  .floating-sigil {
-    position: fixed;
-    bottom: -50px;
-    left: calc(10% + 80% * var(--rand-x));
-    width: 40px;
-    height: 40px;
-    background-image: url('sigil.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.4;
-    animation: floatUp 15s linear infinite;
-    pointer-events: none;
-    z-index: 5;
-  }
-
-  @keyframes floatUp {
-    0% {
-      transform: translateY(0) scale(1) rotate(0deg);
-      opacity: 0.4;
-    }
-    50% {
-      opacity: 0.8;
-    }
-    100% {
-      transform: translateY(-120vh) scale(1.2) rotate(360deg);
-      opacity: 0;
-    }
-  }
-</style>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Secure Vault Login</title>
@@ -167,6 +137,7 @@
     }
   }
 </script>
+
 <audio id="click-sound" preload="auto">
 <source src="click.mp3" type="audio/mpeg"/>
 </audio>
@@ -179,20 +150,6 @@
       clickSound.play();
     });
   });
-<script>
-  function createFloatingSigil() {
-    const sigil = document.createElement('div');
-    sigil.classList.add('floating-sigil');
-    sigil.style.setProperty('--rand-x', Math.random());
-    document.body.appendChild(sigil);
-
-    setTimeout(() => {
-      sigil.remove();
-    }, 15000);
-  }
-
-  // Generate a new sigil every 1.5 seconds
-  setInterval(createFloatingSigil, 1500);
 </script>
 </body>
 </html>
