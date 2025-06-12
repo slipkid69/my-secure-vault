@@ -74,7 +74,6 @@
     box-shadow: 0 0 10px #00ffff;
   }
 </style>
-
 <style>
   /* Fade-in animation for vault container */
   @keyframes fadeIn {
@@ -106,18 +105,18 @@
 <div id="vault-container">
 <h2>Secure Vault Links</h2>
 <div id="whitepaper-link">
-<a href="https://sacredlight.life/resonanceshieldwhitepaper.html" target="_blank">🌀 Resonance Shield Protocol – View White Paper</a>
-<a href="1914_One_Generation_Until_Armageddon.html" target="_blank">🕰 1914 – One Generation Until Armageddon</a>
-<a href="abraham_spiritual_israel.html" target="_blank">🌿 Abraham &amp; the Spiritual Line of Israel</a>
-<a href="babylon_to_today_judeo_christian_myth.html" target="_blank">🏛 Babylon to Today – The Judeo-Christian Myth</a>
-<a href="Jehovah_Protected_You_Webpage.html" target="_blank">🛡 Jehovah Protected You</a>
-<a href="Linguistic_Relics_of_Eden.html" target="_blank">🔤 Linguistic Relics of Eden</a>
-<a href="Scroll_of_the_Anointed_King_Solomon.html" target="_blank">👑 Scroll of the Anointed King Solomon</a>
-<a href="scroll_of_the_unoffendable_men.html" target="_blank">🕊 Scroll of the Unoffendable Men</a>
-<a href="The_Occult_Lie_About_Solomon.html" target="_blank">🌀 The Occult Lie About Solomon</a>
-<a href="The_True_Majesty_of_King_Solomon.html" target="_blank">👑 The True Majesty of King Solomon</a>
-<a href="fractured_light_occult_diamond.html" target="_blank">💎 The Fractured Light – The Occult Symbolism of the Diamond</a>
-</div><div id="whitepaper-link"><a href="The_Becoming_of_Logos_Rich_Golden.html" target="_blank">🌟 The Becoming of Logos – Golden Edition</a></div>
+<a href="https://sacredlight.life/resonanceshieldwhitepaper.html" target="_blank" title="Core principles of resonance shielding">🌀 Resonance Shield Protocol – View White Paper</a>
+<a href="1914_One_Generation_Until_Armageddon.html" target="_blank" title="Prophetic study on 1914 and Armageddon">🕰 1914 – One Generation Until Armageddon</a>
+<a href="abraham_spiritual_israel.html" target="_blank" title="Covenant lineage from Abraham">🌿 Abraham &amp; the Spiritual Line of Israel</a>
+<a href="babylon_to_today_judeo_christian_myth.html" target="_blank" title="Historical deconstruction of religious myths">🏛 Babylon to Today – The Judeo-Christian Myth</a>
+<a href="Jehovah_Protected_You_Webpage.html" target="_blank" title="A testimony of divine protection">🛡 Jehovah Protected You</a>
+<a href="Linguistic_Relics_of_Eden.html" target="_blank" title="Language echoes from Eden">🔤 Linguistic Relics of Eden</a>
+<a href="Scroll_of_the_Anointed_King_Solomon.html" target="_blank" title="Wisdom and power of King Solomon">👑 Scroll of the Anointed King Solomon</a>
+<a href="scroll_of_the_unoffendable_men.html" target="_blank" title="Character and spirit of the unoffendable">🕊 Scroll of the Unoffendable Men</a>
+<a href="The_Occult_Lie_About_Solomon.html" target="_blank" title="Expose of occult distortion in Solomon's name">🌀 The Occult Lie About Solomon</a>
+<a href="The_True_Majesty_of_King_Solomon.html" target="_blank" title="Solomon’s divine royalty re-examined">👑 The True Majesty of King Solomon</a>
+<a href="fractured_light_occult_diamond.html" target="_blank" title="Hidden meanings behind occult diamonds">💎 The Fractured Light – The Occult Symbolism of the Diamond</a>
+</div><div id="whitepaper-link"><a href="The_Becoming_of_Logos_Rich_Golden.html" target="_blank" title="The radiant evolution of Logos">🌟 The Becoming of Logos – Golden Edition</a></div>
 </div>
 </div>
 <audio autoplay="" id="ambient-audio" loop="">
@@ -137,6 +136,20 @@
       toggle.textContent = '🔇';
     }
   }
+</script>
+
+<audio id="click-sound" preload="auto">
+<source src="click.mp3" type="audio/mpeg"/>
+</audio>
+<script>
+  const vaultLinks = document.querySelectorAll('#whitepaper-link a');
+  const clickSound = document.getElementById('click-sound');
+  vaultLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      clickSound.currentTime = 0;
+      clickSound.play();
+    });
+  });
 </script>
 </body>
 </html>
