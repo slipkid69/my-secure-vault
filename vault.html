@@ -3,6 +3,39 @@
 
 <html lang="en">
 <head>
+
+<style>
+  .glyphs {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .glyph {
+    position: absolute;
+    bottom: 0;
+    color: #00ffff;
+    opacity: 0.6;
+    animation: riseGlyphs linear forwards;
+    font-family: monospace;
+  }
+
+  @keyframes riseGlyphs {
+    0% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+</style>
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Secure Vault Login</title>
@@ -12,7 +45,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Orbitron', monospace;
-      background: url('background.jpg') no-repeat center center fixed;
+      background: url('TECHNOHAVEN.png') no-repeat center center fixed;
       background-size: cover;
       overflow: hidden;
       height: 100%;
@@ -99,51 +132,8 @@
     transform: scale(0.98);
   }
 </style>
-
-<style>
-.sigil-container {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.sigil {
-  position: absolute;
-  width: 50px;
-  opacity: 0.5;
-  animation: floatUp 12s linear infinite;
-}
-
-@keyframes floatUp {
-  0% {
-    bottom: -60px;
-    opacity: 0;
-    transform: scale(0.8) rotate(0deg);
-  }
-  25% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1) rotate(180deg);
-  }
-  75% {
-    opacity: 0.3;
-  }
-  100% {
-    bottom: 110%;
-    opacity: 0;
-    transform: scale(1.2) rotate(360deg);
-  }
-}
-</style>
-
 </head>
-<body>
+<body><div aria-hidden="true" class="glyphs"></div>
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; z-index: 1;">
 <div id="vault-container">
 <h2>Secure Vault Links</h2>
@@ -180,7 +170,6 @@
     }
   }
 </script>
-
 <audio id="click-sound" preload="auto">
 <source src="click.mp3" type="audio/mpeg"/>
 </audio>
@@ -194,13 +183,36 @@
     });
   });
 </script>
+<script>
+    const glyphContainer = document.querySelector('.glyphs');
+    const glyphChars = ['◢', '◣', '◥', '◤', '◇', '◆', '◈', '△', '▲', '▴', '▶', '►'];
+    const maxGlyphs = 30;
 
-<div class="sigil-container">
-  <img src="sigil.png" class="sigil" style="left: 15%;" />
-  <img src="sigil.png" class="sigil" style="left: 35%;" />
-  <img src="sigil.png" class="sigil" style="left: 55%;" />
-  <img src="sigil.png" class="sigil" style="left: 75%;" />
-</div>
+    function createGlyph() {
+      const glyph = document.createElement('div');
+      glyph.className = 'glyph';
+      glyph.textContent = glyphChars[Math.floor(Math.random() * glyphChars.length)];
+      glyph.style.left = Math.random() * 100 + 'vw';
+      glyph.style.fontSize = 12 + Math.random() * 20 + 'px';
+      glyph.style.animationDuration = 12 + Math.random() * 12 + 's';
+      glyphContainer.appendChild(glyph);
+      setTimeout(() => glyph.remove(), 25000);
+    }
 
-</body>
+    setInterval(() => {
+      if (glyphContainer.children.length < maxGlyphs) createGlyph();
+    }, 1000);
+
+    function toggleSound() {
+      const audio = document.getElementById('ambient-audio');
+      const toggle = document.getElementById('sound-toggle');
+      if (audio.paused) {
+        audio.play();
+        toggle.textContent = '🔊';
+      } else {
+        audio.pause();
+        toggle.textContent = '🔇';
+      }
+    }
+  </script></body>
 </html>
