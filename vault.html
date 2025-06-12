@@ -59,6 +59,22 @@
       text-decoration: underline;
     }
   </style>
+
+<style>
+  #sound-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00000088;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #00ffff;
+    z-index: 20;
+    box-shadow: 0 0 10px #00ffff;
+  }
+</style>
 </head>
 <body>
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; z-index: 1;">
@@ -79,5 +95,25 @@
 </div><div id="whitepaper-link"><a href="The_Becoming_of_Logos_Rich_Golden.html" target="_blank">🌟 The Becoming of Logos – Golden Edition</a></div>
 </div>
 </div>
+
+<audio autoplay="" id="ambient-audio" loop="">
+<source src="ambient-technohaven.mp3" type="audio/mpeg"/>
+  Your browser does not support the audio element.
+</audio>
+<div id="sound-toggle" onclick="toggleSound()">🔊</div>
+
+<script>
+  function toggleSound() {
+    const audio = document.getElementById('ambient-audio');
+    const toggle = document.getElementById('sound-toggle');
+    if (audio.paused) {
+      audio.play();
+      toggle.textContent = '🔊';
+    } else {
+      audio.pause();
+      toggle.textContent = '🔇';
+    }
+  }
+</script>
 </body>
 </html>
