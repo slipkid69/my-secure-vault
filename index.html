@@ -1,11 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enter TechnoHaven</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enter TechnoHaven</title>
+<!-- Technohaven Favicons -->
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="favicon-512x512.png" rel="icon" sizes="512x512" type="image/png"/>
+<link href="favicon-256x256.png" rel="icon" sizes="256x256" type="image/png"/>
+<link href="favicon-128x128.png" rel="icon" sizes="128x128" type="image/png"/>
+<link href="favicon-64x64.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&amp;display=swap" rel="stylesheet"/>
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -111,25 +121,19 @@
   </style>
 </head>
 <body>
-  <div class="glyphs" aria-hidden="true"></div>
-
-  <img src="sigil.png" alt="Sigil" class="sigil" />
-
-  <div class="center-container">
-    <h1>Beyond the Neon Veil, the Vault Awaits...</h1>
-    <button class="enter-btn" onclick="location.href='vault.html'">Enter TechnoHaven</button>
-  </div>
-
-  <div id="sound-toggle" onclick="toggleSound()">🔊</div>
-
-  <audio id="ambient-audio" autoplay loop>
-    <source src="ambient.mp3" type="audio/mpeg">
+<div aria-hidden="true" class="glyphs"></div>
+<img alt="Sigil" class="sigil" src="sigil.png"/>
+<div class="center-container">
+<h1>Beyond the Neon Veil, the Vault Awaits...</h1>
+<button class="enter-btn" onclick="location.href='vault.html'">Enter TechnoHaven</button>
+</div>
+<div id="sound-toggle" onclick="toggleSound()">🔊</div>
+<audio autoplay="" id="ambient-audio" loop="">
+<source src="ambient.mp3" type="audio/mpeg"/>
     Your browser does not support the audio element.
   </audio>
-
-  <footer>James Armstrong & Logos</footer>
-
-  <script>
+<footer>James Armstrong &amp; Logos</footer>
+<script>
     const glyphContainer = document.querySelector('.glyphs');
     const glyphChars = ['◢', '◣', '◥', '◤', '◇', '◆', '◈', '△', '▲', '▴', '▶', '►'];
     const maxGlyphs = 30;
