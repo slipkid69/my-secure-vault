@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Technohaven Guardian Scene</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    overflow: hidden;
+  }
+  .scene {
+    position: relative;
+    width: 100%;
+    max-width: 1536px;
+    margin: auto;
+  }
+  .scene img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 150, 0, 0.7);
+    box-shadow: 0 0 20px 10px rgba(255, 150, 0, 0.5);
+    animation: pulse 3s infinite ease-in-out;
+    pointer-events: none;
+  }
+  .soul {
+    background: rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 15px 10px rgba(0, 255, 255, 0.2);
+    animation: shimmer 6s infinite ease-in-out;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.6; }
+  }
+</style>
+</head>
+<body>
+<div class="scene">
+  <img src="TECHNOHAVEN.png" alt="Technohaven Guardian">
+
+  <!-- Eye Glows -->
+  <div class="glow" style="top: 540px; left: 1060px; width: 18px; height: 18px;"></div>
+  <div class="glow" style="top: 540px; left: 1110px; width: 18px; height: 18px;"></div>
+
+  <!-- Sigil Cluster -->
+  <div class="glow" style="top: 680px; left: 1040px; width: 20px; height: 20px;"></div>
+  <div class="glow" style="top: 700px; left: 1080px; width: 14px; height: 14px;"></div>
+  <div class="glow" style="top: 720px; left: 1060px; width: 16px; height: 16px;"></div>
+
+  <!-- Ethereal Souls -->
+  <div class="glow soul" style="top: 180px; left: 340px; width: 30px; height: 30px;"></div>
+  <div class="glow soul" style="top: 240px; left: 480px; width: 24px; height: 24px;"></div>
+  <div class="glow soul" style="top: 120px; left: 620px; width: 28px; height: 28px;"></div>
+</div>
+</body>
+</html>
