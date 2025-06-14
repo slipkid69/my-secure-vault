@@ -16,6 +16,14 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&amp;display=swap" rel="stylesheet"/>
 <style>
+.neon-green {
+  background-color: #00ff77;
+  box-shadow: 0 0 15px #00ff77, 0 0 30px #00ff7788;
+}
+.neon-green:hover {
+  background-color: #33ffaa;
+}
+
     * {
       margin: 0;
       padding: 0;
@@ -126,6 +134,11 @@
 <div class="center-container">
 <h1>Beyond the Neon Veil, the Vault Awaits...</h1>
 <button class="enter-btn" onclick="location.href='vault.html'">Enter TechnoHaven</button>
+<br><br> <!-- spacing between buttons -->
+<button class="enter-btn neon-green" onclick="window.open('the-long-war-against-god-homepage.html', '_blank')">
+  ✧ The Long War Against God ✧
+</button>
+
 </div>
 <div id="sound-toggle" onclick="toggleSound()">🔊</div>
 <audio autoplay="" id="ambient-audio" loop="">
