@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIN-DER Carousel</title>
+<style>
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(ellipse at center, #1b1b1b 0%, #0a0a0a 100%);
+      overflow: hidden;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .glass-box {
+  position: relative;
+  width: 700px;
+  height: 1060px;
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+    .carousel-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: opacity 0.5s ease;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 48px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      color: #00ffff;
+      border: 1px solid rgba(0, 255, 255, 0.5);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .arrow:hover {
+      background: rgba(0, 255, 255, 0.3);
+    }
+
+    .arrow-left {
+      left: 2rem;
+    }
+
+    .arrow-right {
+      right: 2rem;
+    }
+
+  
+
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("images/bg-31.png") center center / cover no-repeat fixed;
+  z-index: -1;
+}
+
+</style>
+<style>
+/* Force vertical scrollbar always visible */
+html {
+    overflow-y: scroll;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #300000; /* Dark red track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff4500, #ff8c00); /* Flaming orange-red */
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #ff6347, #ffa500); /* Brighter on hover */
+}
+</style></head>
+<body style="margin: 0; font-family: 'Segoe UI', sans-serif; overflow: hidden; position: relative;">
+<div class="carousel-container">
+<div class="arrow arrow-left" onclick="navigate(-1)">❮</div>
+<div class="glass-box">
+<img alt="Profile Image" class="carousel-image" id="carouselImage" src="images/1.png"/>
+</div>
+<div class="arrow arrow-right" onclick="navigate(1)">❯</div>
+</div>
+<script>
+  let currentIndex = 1;
+  const totalImages = 30;
+
+  function navigate(direction) {
+    currentIndex += direction;
+    if (currentIndex < 1) currentIndex = totalImages;
+    if (currentIndex > totalImages) currentIndex = 1;
+
+    document.getElementById('carouselImage').src = `images/${currentIndex}.png`;
+  }
+</script>
+<div class="background-container"></div>
+<audio autoplay="" loop="">
+<source src="fire.mp3" type="audio/mpeg"/>
+  Your browser does not support the audio element.
+</audio>
+
+<footer style="text-align: center; padding: 20px; background: linear-gradient(to right, red, orange); color: white; font-weight: bold; font-size: 1.1em; border-top: 2px solid #ffcc00;">
+  🐾 The Dog’s Bollocks of Web Design 🐾<br>
+  By decree of James & Logos, Keepers of the Carousel & Barons of the Burnished Browsers.<br>
+  Let the sacred scroll bar stand as a flaming standard of victory.<br>
+  & so it is written… & so it scrolls.
+  <div style="margin-top: 10px; font-size: 0.8em; font-weight: normal;">
+    © 2025 James Armstrong & logos. This is a parody of Tinder, dating apps, & dating culture in general.
+  </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
