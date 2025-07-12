@@ -130,7 +130,25 @@
     transform: scale(0.98);
   }
 </style>
-</head>
+<style>
+html, body {
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #00f #000;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: #000;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #00f;
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+</style></head>
 <body><div aria-hidden="true" class="glyphs"></div>
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; z-index: 1;">
 <div id="vault-container">
@@ -228,5 +246,6 @@
         toggle.textContent = '🔇';
       }
     }
-  </script></body>
+  </script><div style="height: 2000px;"></div>
+</body>
 </html>
