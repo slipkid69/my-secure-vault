@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belltots Scroll I – The Jingle Jar Mix-Up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #4b0082, #ff8c00); /* purple to orange */
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: auto;
+    }
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 100px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      color: #fff;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      animation: pulseGlow 3s infinite;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      margin: 40px auto;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
+      50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.4); }
+      100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    em {
+      display: block;
+      margin-top: 20px;
+      font-style: italic;
+      text-align: center;
+      font-size: 1.1em;
+      color: #ffe;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-box">
+    <h1>The Jingle Jar Mix-Up</h1>
+
+    <p><strong>BellTots.</strong></p>
+    <p>In the heart of the Bellburrow, Crimblin had found a jar of jingleberries. He wasn’t supposed to open it, but the jingles were so tempting—each one giggled when shaken. “Just one shake,” he whispered. But the jar burst open, and the jingles flew everywhere, bouncing off shelves, tickling scrolls, and waking the sleepy Belltots from their nap.</p>
+    <!-- Image of the jar tugging scene -->
+    <img src="jar-tug.png" alt="Crimblin and Purplune tugging the jingle jar" />
+    <!-- Image of the two Belltots -->
+    <img src="belltots-duo.png" alt="Two Belltots smiling" />
+    <p>Instead of scolding, the Belltots gathered the jingles together, each one humming a different tune. They made a new mix—The Jingle Jar Mix-Up—and danced until the moon giggled too.</p>
+    <em>Moral: Sharing isn’t just fair—it makes things more magical.</em>
+  </div>
+</body>
+</html>
