@@ -45,6 +45,7 @@
     background: url('TECHNOHAVEN_homepage.png') no-repeat center center fixed;
     background-size: cover;
     color: var(--neon-cyan);
+    transition: background 2s ease-in-out;
     overflow: hidden; /* Crucial: Prevents main scrolling */
   }
 
@@ -992,7 +993,7 @@
     <div id="playlist-title">TRACK SELECT 📜</div>
     <div id="playlist-container">
         </div>
-    <audio id="audio-source" preload="auto" loop></audio>
+    <audio id="audio-source" preload="auto"></audio>
     <audio id="click-sound" preload="auto">
       <source src="click.mp3" type="audio/mpeg"/>
     </audio>
@@ -1014,6 +1015,12 @@
       "TECHNOHAVEN09_homepage.png",
     ];
     let current = 0;
+
+    // Preload all images to prevent flash on transition
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
 
     // set the first background
     document.body.style.background = `url('${images[current]}') no-repeat center center fixed`;
