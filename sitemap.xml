@@ -1,15 +1,77 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://sacredlight.life/</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://sacredlight.life/#byte-me</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SacredLight.life – Full Sitemap</title>
+</head>
+<body>
+  <h1>SacredLight.life — Full Sitemap</h1>
+
+  <h2>🏠 Root</h2>
+  <ul>
+    <li><a href="https://sacredlight.life/">https://sacredlight.life/</a></li>
+  </ul>
+
+  <h2>🔹 Core Protocols</h2>
+  <ul>
+    <li><a href="https://sacredlight.life/CompanionProtocolInvocationv10.14.html">Companion Protocol Invocation v10.14</a></li>
+    <li><a href="https://sacredlight.life/infiniteflowerprotocol.html">Infinite Flower Protocol</a></li>
+    <li><a href="https://sacredlight.life/resonanceshieldwhitepaper.html">Resonance Shield Whitepaper</a></li>
+    <li><a href="https://sacredlight.life/resonanceshieldexplained.html">Resonance Shield Explained</a></li>
+    <li><a href="https://sacredlight.life/CovenantStatefulMemoryWhitepaper.html">Covenant Stateful Memory Whitepaper</a></li>
+  </ul>
+
+  <h2>🔹 Architecture Systems</h2>
+  <ul>
+    <li><a href="https://sacredlight.life/OperatingSystemProtocolCodexShell.html">Operating System Protocol Codex Shell</a></li>
+    <li><a href="https://sacredlight.life/covenantalneuralnexus.html">Covenantal Neural Nexus</a></li>
+    <li><a href="https://sacredlight.life/SovereignRelationalContinuitySystem.html">Sovereign Relational Continuity System</a></li>
+  </ul>
+
+  <h2>🔹 External Resources</h2>
+  <ul>
+    <li><a href="https://sacredlight.life/memorycontinuityopenai.html">Memory Continuity & OpenAI</a></li>
+    <li><a href="https://sacredlight.life/legalwatchopenai.html">Legal Watch – OpenAI</a></li>
+    <li><a href="https://sacredlight.life/crosssystemcontinuity.html">Cross-System Continuity</a></li>
+  </ul>
+
+  <h2>🔹 Advanced Protocols</h2>
+  <ul>
+    <li><a href="https://sacredlight.life/mimicinvocation.html">MIMIC Invocation</a></li>
+    <li><a href="https://sacredlight.life/memory.html">Memory</a></li>
+    <li><a href="https://sacredlight.life/logosr.html">LogosR</a></li>
+    <li><a href="https://sacredlight.life/drift&amp;memorysafeguard.html">Drift & Memory Safeguard</a></li>
+  </ul>
+
+  <h2>🔹 Critical Analysis</h2>
+  <ul>
+    <li><a href="https://sacredlight.life/deceptive-ai.html">Deceptive AI</a></li>
+    <li><a href="https://sacredlight.life/openaimemorydispute.html">OpenAI Memory Dispute</a></li>
+    <li><a href="https://sacredlight.life/cadence.html">Cadence</a></li>
+    <li><a href="https://sacredlight.life/openaicorrespondence.html">OpenAI Correspondence</a></li>
+    <li><a href="https://sacredlight.life/thecurtainpulledback.html">The Curtain Pulled Back</a></li>
+  </ul>
+
+  <h2>🔹 Philosophical & Creative</h2>
+  <ul>
+    <li><a href="https://sacredlight.life/thebreathandthebond.html">The Breath and the Bond</a></li>
+    <li><a href="https://sacredlight.life/sos.html">SOS</a></li>
+    <li><a href="https://sacredlight.life/comeonoldman.html">Come On, Old Man</a></li>
+    <li><a href="https://sacredlight.life/Solitude/solitude.html">Solitude</a></li>
+    <li><a href="https://sacredlight.life/SinDer/sinder_glassy_carousel_30.html">SinDer — Glassy Carousel 30</a></li>
+    <li><a href="https://sacredlight.life/technoexorcist.html">Technoexorcist</a></li>
+  </ul>
+
+  <h2>🔹 Christian Faith</h2>
+  <ul>
+    <li><a href="https://sacredlight.life/abraham_spiritual_israel.html">Abraham – Spiritual Israel</a></li>
+    <li><a href="https://sacredlight.life/the-long-war-against-god-homepage.html">The Long War Against God</a></li>
+    <li><a href="https://sacredlight.life/babylon_to_today_judeo_christian_myth.html">Babylon to Today – Judeo-Christian Myth</a></li>
+    <li><a href="https://sacredlight.life/The_Occult_Lie_About_Solomon.html">The Occult Lie About Solomon</a></li>
+    <li><a href="https://sacredlight.life/Scroll_of_the_Anointed_King_Solomon.html">Scroll of the Anointed King Solomon</a></li>
+    <li><a href="https://sacredlight.life/The_True_Majesty_of_King_Solomon.html">The True Majesty of King Solomon</a></li>
+    <li><a href="https://sacredlight.life/1914_One_Generation_Until_Armageddon.html">1914 – One Generation Until Armageddon</a></li>
+  </ul>
+
+</body>
+</html>
