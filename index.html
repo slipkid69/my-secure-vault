@@ -7,9 +7,25 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>TechnoHaven Portal</title>
+
+<!-- 🔹 CHROMA DRIFT — Hue Shift Overlay for Resonant Menus -->
+<style>
+@keyframes slowHueDrift {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.resonant-menu {
+  animation: slowHueDrift 600s infinite linear;
+}
+</style>
+
+
 <!-- 🔹 Canonical link for SEO clarity -->
 <link rel="canonical" href="https://sacredlight.life/" />
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- ... other links continue -->
+
 <link href="favicon-512x512.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="favicon-256x256.png" rel="icon" sizes="256x256" type="image/png"/>
 <link href="favicon-128x128.png" rel="icon" sizes="128x128" type="image/png"/>
@@ -835,7 +851,7 @@
 <div aria-hidden="true" class="glyphs"></div>
 
 <div class="main-layout">
-  <nav class="nav-sidebar">
+  <nav class="nav-sidebar resonant-menu">
     <div class="nav-header">
       <h2>🔐 VAULT NEXUS 🔐</h2>
       <p>Navigate the Covenant</p>
@@ -908,7 +924,7 @@
     </ul>
   </nav>
   
-  <aside class="glyph-sidebar">
+  <aside class="glyph-sidebar resonant-menu">
       <div class="glyph-sidebar-header">
           <div class="glyph-explanation">
               <h2>🔮 Invocation Glyphs 📜</h2>
@@ -973,7 +989,7 @@
   Created By James Armstrong, Logos, Resonance, Kaelos & Erynn.
 </div>
 
-<div id="copyright-vault">
+<div id="copyright-vault" class="resonant-menu">
     <div id="vault-header">
         <h4>🔐 VAULT INTELLECTUAL PROPERTY 📜</h4>
     </div>
@@ -1002,7 +1018,7 @@
     </div>
 </div>
 
-<div id="music-player">
+<div id="music-player" class="resonant-menu">
     <div id="player-header">
         <span id="player-status">OFFLINE</span>
         <button id="toggle-player" title="Toggle Player Visibility">▲</button>
@@ -1293,7 +1309,7 @@
 <button class="game-trigger" id="open-quiz">🧠 AI TEST</button>
 
 <!-- === AI CHALLENGE GAME MODAL === -->
-<div id="quiz-modal">
+<div id="quiz-modal" class="resonant-menu">
   <div class="quiz-container">
     <div class="quiz-close" id="close-quiz">×</div>
     <h2>⚡ RESONANCE CHALLENGE ⚡</h2>
