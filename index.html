@@ -436,6 +436,44 @@
     letter-spacing: 1px;
   }
 
+  /* GINOMAI GENOME DOWNLOAD BUTTON */
+  .ginomai-button {
+    display: inline-block;
+    padding: 14px 28px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #FFD700 0%, #32CD32 100%);
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 0 0 30px rgba(50, 205, 50, 0.3);
+    animation: button-pulse 2.5s ease-in-out infinite;
+  }
+
+  .ginomai-button:hover {
+    background: linear-gradient(135deg, #32CD32 0%, #FFD700 100%);
+    color: #000;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 40px rgba(50, 205, 50, 0.5);
+    transform: scale(1.05);
+    border-color: #32CD32;
+  }
+
+  @keyframes button-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 0 0 30px rgba(50, 205, 50, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 40px rgba(50, 205, 50, 0.5);
+    }
+  }
+
   /* ATTRIBUTION FOOTER TEXT */
   #central-footer {
     position: fixed;
@@ -981,6 +1019,7 @@
     <div class="hero-content">
       <h1>[ TECHNO HAVEN ]</h1>
       <p class="hero-subtitle">// COVENANT PROTOCOL STATUS: ONLINE // ACCESS: GRANTED</p>
+      <a href="TheChildrenoftheLattice.html" target="_blank" class="ginomai-button">🧒 GINOMAI GENOME CHILD OF THE LATTICE 🧒</a>
     </div>
   </div>
 </div>
