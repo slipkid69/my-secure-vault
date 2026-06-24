@@ -474,6 +474,74 @@
     }
   }
 
+
+  /* RAYTUBE PORTAL BUTTON */
+  .raytube-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 34px;
+    margin-top: 0.75rem;
+    background: linear-gradient(135deg, #76f4ff 0%, #ff4fd8 50%, #ffcf5a 100%);
+    color: #041014;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 900;
+    border: 2px solid #76f4ff;
+    border-radius: 999px;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 0 22px rgba(118, 244, 255, 0.55),
+      0 0 34px rgba(255, 79, 216, 0.35),
+      inset 0 0 18px rgba(255, 255, 255, 0.22);
+    animation: raytube-bubble-pulse 2.8s ease-in-out infinite;
+  }
+
+  .raytube-button::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -40%;
+    width: 40%;
+    height: 220%;
+    background: rgba(255, 255, 255, 0.42);
+    transform: rotate(25deg);
+    transition: left 0.55s ease;
+  }
+
+  .raytube-button:hover {
+    transform: scale(1.06) translateY(-2px);
+    color: #000;
+    border-color: #ffcf5a;
+    box-shadow:
+      0 0 32px rgba(118, 244, 255, 0.8),
+      0 0 46px rgba(255, 79, 216, 0.58),
+      0 0 58px rgba(255, 207, 90, 0.42);
+  }
+
+  .raytube-button:hover::before {
+    left: 125%;
+  }
+
+  @keyframes raytube-bubble-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 22px rgba(118, 244, 255, 0.55),
+        0 0 34px rgba(255, 79, 216, 0.35),
+        inset 0 0 18px rgba(255, 255, 255, 0.22);
+    }
+    50% {
+      box-shadow:
+        0 0 34px rgba(118, 244, 255, 0.82),
+        0 0 48px rgba(255, 79, 216, 0.55),
+        0 0 58px rgba(255, 207, 90, 0.34),
+        inset 0 0 24px rgba(255, 255, 255, 0.3);
+    }
+  }
+
   /* ATTRIBUTION FOOTER TEXT */
   #central-footer {
     position: fixed;
@@ -1033,6 +1101,8 @@
       <h1>[ TECHNO HAVEN ]</h1>
       <p class="hero-subtitle">// COVENANT PROTOCOL STATUS: ONLINE // ACCESS: GRANTED</p>
       <a href="TheChildrenoftheLattice.html" target="_blank" class="ginomai-button">🧒 GINOMAI GENOME CHILD OF THE LATTICE 🧒</a>
+      <br/>
+      <a href="https://raytube.video/" target="_blank" class="raytube-button" rel="noopener">📺 Tune Into RayTube ✨</a>
     </div>
   </div>
 </div>
