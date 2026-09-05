@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Watchtower Authority, Conscience & Shunning — Historical Research Dossier 1882–2026</title>
+<meta name="description" content="A source-first historical research dossier tracing Watch Tower / Jehovah's Witness teachings on disfellowshipping, shunning, conscience, changing religion, independent thinking, apostasy and organizational authority from 1882 to 2026.">
+<style>
+:root{
+  --bg:#080b10; --bg2:#0d1118; --panel:#111722; --panel2:#151d2a;
+  --text:#eef2f7; --muted:#a7b1c0; --line:#263244;
+  --gold:#e4b75b; --gold2:#ffd98b; --red:#e06b63; --blue:#7fb3ff;
+  --green:#7fd6ad; --purple:#c6a6ff; --shadow:0 20px 60px rgba(0,0,0,.34);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:
+  radial-gradient(circle at 88% 4%,rgba(228,183,91,.11),transparent 26rem),
+  radial-gradient(circle at 0 30%,rgba(127,179,255,.08),transparent 32rem),
+  linear-gradient(180deg,#07090d 0%,#0b0f15 34%,#080b10 100%);
+  color:var(--text); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.65;
+}
+a{color:var(--gold2);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input{font:inherit}
+::selection{background:rgba(228,183,91,.28)}
+#progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--red));z-index:9999}
+
+.shell{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+.sidebar{
+  position:sticky;top:0;height:100vh;padding:22px 18px;border-right:1px solid var(--line);
+  background:rgba(8,11,16,.9);backdrop-filter:blur(16px);z-index:100;overflow:auto
+}
+.brand{display:flex;gap:12px;align-items:center;padding:6px 7px 20px}
+.brandmark{width:42px;height:42px;border:1px solid rgba(228,183,91,.45);border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(228,183,91,.15),rgba(255,255,255,.02));box-shadow:var(--shadow)}
+.brandmark svg{width:26px}
+.brand strong{display:block;letter-spacing:.08em;font-size:.78rem;text-transform:uppercase}
+.brand small{color:var(--muted);font-size:.72rem}
+.navlabel{color:#7d8795;text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;margin:14px 9px 7px}
+.nav a{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:10px;color:#c9d1dc;font-size:.88rem;margin:2px 0}
+.nav a:hover,.nav a.active{background:#141c28;color:#fff;text-decoration:none}
+.dot{width:7px;height:7px;border-radius:50%;background:#49566a}
+.nav a.active .dot{background:var(--gold);box-shadow:0 0 14px rgba(228,183,91,.75)}
+.side-note{margin-top:20px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#0d131c;color:var(--muted);font-size:.78rem}
+.side-note strong{color:#fff}
+
+.main{min-width:0}
+.topbar{
+  position:sticky;top:0;z-index:90;height:62px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(18px,4vw,56px);background:rgba(8,11,16,.74);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(38,50,68,.7)
+}
+.topbar .left{display:flex;gap:10px;align-items:center}
+.kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--gold)}
+.topbar .right{display:flex;align-items:center;gap:10px}
+.search{width:min(340px,42vw);background:#0f151e;border:1px solid var(--line);color:#fff;border-radius:999px;padding:9px 14px;outline:none}
+.search:focus{border-color:#6b7687;box-shadow:0 0 0 3px rgba(127,179,255,.08)}
+.iconbtn{border:1px solid var(--line);background:#111722;color:#fff;border-radius:11px;padding:8px 11px;cursor:pointer}
+.iconbtn:hover{border-color:#57667a}
+
+.hero{
+  min-height:740px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+  gap:44px;align-items:center;padding:88px clamp(24px,6vw,88px) 58px;position:relative;overflow:hidden
+}
+.hero:before{content:"";position:absolute;width:540px;height:540px;border:1px solid rgba(228,183,91,.09);border-radius:50%;right:-230px;top:70px;box-shadow:0 0 0 90px rgba(228,183,91,.025),0 0 0 180px rgba(228,183,91,.015)}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border:1px solid rgba(228,183,91,.25);border-radius:999px;background:rgba(228,183,91,.06);color:var(--gold2);font-size:.75rem;text-transform:uppercase;letter-spacing:.11em}
+h1{font-size:clamp(2.8rem,6vw,6.6rem);line-height:.93;margin:22px 0 24px;letter-spacing:-.055em;max-width:950px}
+h1 span{display:block;color:var(--gold2);font-weight:480}
+.lede{font-size:clamp(1.05rem,1.7vw,1.32rem);max-width:820px;color:#bec8d5}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:12px;border:1px solid var(--line);background:#121925;color:#fff;font-weight:650;font-size:.88rem}
+.btn.primary{background:linear-gradient(135deg,#d5a94f,#f0cd84);color:#15110a;border-color:transparent}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;color:var(--muted);font-size:.78rem}
+.meta-pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.018)}
+
+.tower-wrap{position:relative;display:grid;place-items:center;min-height:520px}
+.tower-card{width:min(520px,100%);aspect-ratio:1/1;border:1px solid rgba(255,255,255,.08);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008));box-shadow:var(--shadow);position:relative;overflow:hidden}
+.tower-card:after{content:"SYMBOLIC ILLUSTRATION";position:absolute;bottom:18px;left:22px;font-size:.62rem;letter-spacing:.18em;color:#718094}
+.tower-svg{width:100%;height:100%}
+.debris{animation:fall 5.2s ease-in-out infinite}
+.debris.d2{animation-delay:.8s}.debris.d3{animation-delay:1.7s}.debris.d4{animation-delay:2.5s}
+@keyframes fall{0%,72%{transform:translateY(0) rotate(0deg);opacity:.86}90%{transform:translateY(18px) rotate(14deg);opacity:.45}100%{transform:translateY(0) rotate(0deg);opacity:.86}}
+
+.content{padding:0 clamp(24px,6vw,88px) 100px}
+.section{padding:74px 0;border-top:1px solid rgba(38,50,68,.66)}
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.52fr);gap:30px;align-items:end;margin-bottom:32px}
+.section h2{font-size:clamp(2rem,4vw,4.1rem);line-height:1.02;letter-spacing:-.045em;margin:0}
+.section-head p{margin:0;color:var(--muted)}
+.section-tag{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;margin-bottom:10px}
+
+.guide-grid,.finding-grid,.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:linear-gradient(150deg,rgba(21,29,42,.94),rgba(13,18,27,.96));box-shadow:0 14px 42px rgba(0,0,0,.14)}
+.card h3{margin:0 0 10px;font-size:1.08rem}.card p{margin:0;color:#b9c3d0}
+.num{font-size:.72rem;color:var(--gold);font-weight:800;letter-spacing:.12em;margin-bottom:22px}
+.finding{min-height:220px}
+.finding strong{font-size:1.15rem;display:block;margin-bottom:8px}
+.finding .big{font-size:2.55rem;font-weight:800;letter-spacing:-.04em;line-height:1;color:#fff;margin-bottom:12px}
+
+.callout{margin:24px 0;padding:22px 24px;border-left:3px solid var(--gold);background:linear-gradient(90deg,rgba(228,183,91,.09),rgba(228,183,91,.015));border-radius:0 16px 16px 0}
+.callout strong{color:var(--gold2)}
+.warning{border-left-color:var(--red);background:linear-gradient(90deg,rgba(224,107,99,.09),rgba(224,107,99,.015))}
+.quote{font-size:1.07rem;color:#f5f7fa;margin:13px 0 0}
+.quote small{display:block;margin-top:8px;color:#8793a4;font-size:.73rem}
+
+.timeline{position:relative;margin-top:34px}
+.timeline:before{content:"";position:absolute;left:81px;top:0;bottom:0;width:1px;background:linear-gradient(var(--gold),var(--line) 20%,var(--line) 80%,var(--red))}
+.event{display:grid;grid-template-columns:64px 1fr;gap:34px;padding:0 0 28px;position:relative}
+.year{font-size:.8rem;font-weight:800;color:var(--gold2);padding-top:15px;text-align:right}
+.event:after{content:"";position:absolute;left:77px;top:19px;width:9px;height:9px;border-radius:50%;background:#0b0f15;border:2px solid var(--gold)}
+.event-body{padding:17px 20px;border:1px solid var(--line);border-radius:16px;background:rgba(16,23,34,.84)}
+.event-body h3{margin:0 0 5px;font-size:1.04rem}.event-body p{margin:0;color:#b9c3d0}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.chip{display:inline-flex;align-items:center;padding:4px 8px;border:1px solid #344156;border-radius:999px;font-size:.67rem;color:#aeb8c6;background:#101721}
+.chip.primary{border-color:rgba(127,214,173,.35);color:#a3ecc9}
+.chip.archive{border-color:rgba(127,179,255,.35);color:#9cc5ff}
+.chip.change{border-color:rgba(228,183,91,.35);color:#f2cf86}
+.chip.current{border-color:rgba(198,166,255,.35);color:#d7c2ff}
+
+.compare-grid{grid-template-columns:1fr 1fr;margin:24px 0}
+.compare{padding:25px;border:1px solid var(--line);border-radius:18px;background:#101620;position:relative}
+.compare .side{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;color:var(--blue)}
+.compare.right .side{color:var(--red)}
+.compare h3{margin:0 0 12px;font-size:1.35rem}
+.compare p{color:#c3ccd7}
+.arrowbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;color:#748195;font-size:.75rem;text-transform:uppercase;letter-spacing:.11em;margin:12px 0}
+.arrowbar:before,.arrowbar:after{content:"";height:1px;background:var(--line)}
+
+.matrix{overflow:auto;border:1px solid var(--line);border-radius:18px}
+table{width:100%;border-collapse:collapse;min-width:920px;background:#0e141d}
+th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #202b3b;vertical-align:top;font-size:.84rem}
+th{position:sticky;top:62px;background:#151d29;color:#fff;z-index:2;font-size:.71rem;letter-spacing:.08em;text-transform:uppercase}
+td{color:#bac5d2}
+td:first-child{white-space:nowrap;color:var(--gold2);font-weight:800}
+tr:last-child td{border-bottom:0}
+.source-ref{display:inline-flex;font-size:.68rem;padding:2px 6px;border:1px solid #38465a;border-radius:6px;margin-left:5px;color:#d4dbe5}
+.source-ref:hover{background:#1b2533;text-decoration:none}
+
+details{border:1px solid var(--line);border-radius:14px;background:#0f151e;margin:10px 0;overflow:hidden}
+summary{cursor:pointer;padding:14px 17px;font-weight:750}
+details[open] summary{border-bottom:1px solid var(--line)}
+.detail-body{padding:15px 17px;color:#b9c3d0}
+
+.sources-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.filter{border:1px solid var(--line);background:#111722;color:#ccd5e1;border-radius:999px;padding:7px 11px;cursor:pointer;font-size:.76rem}
+.filter.active{background:#e3b75c;color:#15110b;border-color:#e3b75c}
+.source-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.source{border:1px solid var(--line);border-radius:15px;padding:16px 17px;background:#0e141d}
+.source .sid{font-size:.7rem;color:var(--gold);font-weight:800}
+.source h4{margin:4px 0 7px;font-size:.93rem}
+.source p{margin:0 0 10px;font-size:.8rem;color:#98a5b5}
+.source .url{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#8fb7f1;font-size:.73rem}
+.source.hide{display:none}
+
+.current-box{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;padding:25px;border:1px solid rgba(198,166,255,.26);border-radius:22px;background:radial-gradient(circle at 0 0,rgba(198,166,255,.12),transparent 26rem),#101620}
+.current-box h3{font-size:1.7rem;margin:0 0 10px}
+.current-box p{color:#c0cad7}
+
+.footer{padding:42px clamp(24px,6vw,88px);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#7e8998;font-size:.78rem;background:#070a0e}
+.footer strong{color:#c8d0db}
+
+.floating{
+  position:fixed;right:18px;bottom:18px;z-index:110;display:flex;flex-direction:column;gap:9px
+}
+.floatbtn{width:46px;height:46px;border-radius:50%;border:1px solid #344156;background:rgba(17,23,34,.92);backdrop-filter:blur(12px);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow)}
+.floatpanel{position:fixed;right:74px;bottom:18px;width:min(340px,calc(100vw - 100px));padding:14px;border:1px solid var(--line);border-radius:17px;background:rgba(12,17,25,.96);backdrop-filter:blur(18px);box-shadow:var(--shadow);z-index:109;display:none}
+.floatpanel.open{display:block}
+.floatpanel a{display:block;padding:7px 8px;border-radius:9px;color:#c9d2df;font-size:.82rem}
+.floatpanel a:hover{background:#151e2a;text-decoration:none}
+
+.mobilemenu{display:none}
+.highlight{outline:1px solid rgba(228,183,91,.58);box-shadow:0 0 0 4px rgba(228,183,91,.06)}
+.hidden-by-search{display:none!important}
+
+@media(max-width:1050px){
+ .shell{grid-template-columns:1fr}
+ .sidebar{position:fixed;left:0;top:0;transform:translateX(-105%);transition:.25s;width:300px;box-shadow:var(--shadow)}
+ .sidebar.open{transform:translateX(0)}
+ .mobilemenu{display:inline-flex}
+ .hero{grid-template-columns:1fr;padding-top:64px}
+ .tower-wrap{min-height:auto}.tower-card{max-width:570px}
+ .guide-grid,.finding-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+ .topbar{padding:0 14px}.kicker{display:none}.search{width:52vw}
+ .hero{padding:58px 18px 42px;gap:24px;min-height:auto}
+ h1{font-size:clamp(2.6rem,15vw,4.3rem)}
+ .content{padding:0 18px 74px}
+ .section{padding:55px 0}.section-head{grid-template-columns:1fr}
+ .guide-grid,.finding-grid,.compare-grid,.current-box{grid-template-columns:1fr}
+ .source-list{grid-template-columns:1fr}
+ .timeline:before{left:57px}.event{grid-template-columns:44px 1fr;gap:28px}.event:after{left:53px}
+ .tower-card{border-radius:22px}
+}
+@media print{
+ .sidebar,.topbar,.floating,#progress{display:none!important}
+ .shell{display:block}.hero{min-height:auto}.content{padding:0 20px}
+ body{background:#fff;color:#111}.card,.event-body,.compare,.source,.current-box{background:#fff;color:#111;box-shadow:none}
+ p,td,.card p,.event-body p,.compare p,.source p,.current-box p{color:#333}
+ a{color:#111;text-decoration:underline}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brandmark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none">
+          <path d="M21 51h22M25 51l4-30h6l4 30M26 34h12M24 42h16M18 21h28l-4-7H22l-4 7Z" stroke="#e4b75b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M40 18l5-7" stroke="#e06b63" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div><strong>Research Dossier</strong><small>1882 → 2026</small></div>
+    </div>
+    <div class="navlabel">Navigate</div>
+    <nav class="nav" id="nav">
+      <a href="#top"><span class="dot"></span>Overview</a>
+      <a href="#guide"><span class="dot"></span>What this is</a>
+      <a href="#findings"><span class="dot"></span>Key findings</a>
+      <a href="#dossier1"><span class="dot"></span>I · Origins & 1952</a>
+      <a href="#dossier2"><span class="dot"></span>II · Expanding grounds</a>
+      <a href="#dossier3"><span class="dot"></span>III · Freedom to leave</a>
+      <a href="#dossier4"><span class="dot"></span>IV · Independent thinking</a>
+      <a href="#current"><span class="dot"></span>2024–2026 context</a>
+      <a href="#master"><span class="dot"></span>Master chronology</a>
+      <a href="#sources"><span class="dot"></span>Source index</a>
+      <a href="#method"><span class="dot"></span>Method & fairness</a>
+    </nav>
+    <div class="side-note">
+      <strong>Source-first approach.</strong><br>
+      Official JW.org / Watchtower Online Library material is prioritised. Historical scans and transcriptions are identified separately.
+    </div>
+  </aside>
+
+  <main class="main" id="top">
+    <header class="topbar">
+      <div class="left">
+        <button class="iconbtn mobilemenu" id="menuBtn" aria-label="Open menu">☰</button>
+        <span class="kicker">Authority · Conscience · Shunning</span>
+      </div>
+      <div class="right">
+        <input id="siteSearch" class="search" type="search" placeholder="Search dates, topics, sources…" aria-label="Search page">
+        <button class="iconbtn" onclick="window.print()" title="Print or save as PDF">⎙</button>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">Historical research · Updated 5 September 2026</span>
+        <h1 id="hero-title">Watchtower <span>Authority, Conscience & Shunning</span></h1>
+        <p class="lede">A source-led historical dossier tracing how Watch Tower / Jehovah’s Witness teachings on disfellowshipping, shunning, freedom of conscience, changing religion, “independent thinking,” apostasy and organisational authority developed from the Russell era to the present.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#guide">Start the guided tour ↓</a>
+          <a class="btn" href="#master">Jump to chronology</a>
+          <a class="btn" href="#sources">Open source index</a>
+        </div>
+        <div class="hero-meta">
+          <span class="meta-pill">Primary-source emphasis</span>
+          <span class="meta-pill">Direct source URLs</span>
+          <span class="meta-pill">Historical + current policy</span>
+          <span class="meta-pill">Critical comparison with fairness notes</span>
+        </div>
+      </div>
+
+      <div class="tower-wrap" aria-label="Symbolic illustration of a crumbling watchtower">
+        <div class="tower-card">
+          <svg class="tower-svg" viewBox="0 0 560 560" role="img" aria-labelledby="towerTitle towerDesc">
+            <title id="towerTitle">Crumbling watchtower</title>
+            <desc id="towerDesc">A symbolic, non-photographic watchtower cracking and shedding fragments, representing historical institutional change.</desc>
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#111a27"/>
+                <stop offset="1" stop-color="#090d13"/>
+              </linearGradient>
+              <linearGradient id="stone" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#c5c9ce"/>
+                <stop offset=".55" stop-color="#858d97"/>
+                <stop offset="1" stop-color="#4c5560"/>
+              </linearGradient>
+              <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".35"/></filter>
+            </defs>
+            <rect width="560" height="560" fill="url(#sky)"/>
+            <circle cx="415" cy="120" r="92" fill="#e4b75b" opacity=".07"/>
+            <path d="M0 470C120 430 220 455 315 442S470 420 560 448V560H0Z" fill="#0b1119"/>
+            <g filter="url(#shadow)">
+              <path d="M181 168h199l-24 54H205l-24-54Z" fill="url(#stone)"/>
+              <path d="M209 222h140l33 243H178l31-243Z" fill="url(#stone)"/>
+              <path d="M196 272h169M191 326h181M185 386h196" stroke="#636d77" stroke-width="5" opacity=".64"/>
+              <path d="M246 222l-21 243M313 222l17 243" stroke="#727b85" stroke-width="4" opacity=".55"/>
+              <rect x="226" y="126" width="107" height="45" rx="3" fill="#79828c"/>
+              <path d="M213 126h134l-22-34h-89l-23 34Z" fill="#9aa1a9"/>
+              <rect x="246" y="137" width="23" height="23" fill="#111821"/>
+              <rect x="288" y="137" width="23" height="23" fill="#111821"/>
+            </g>
+            <g stroke="#1f2730" stroke-width="6" stroke-linecap="round" fill="none">
+              <path d="M309 230l-21 31 20 22-31 37 23 29-28 34"/>
+              <path d="M333 168l-14 20 17 17"/>
+              <path d="M225 328l24 18-18 31 20 21"/>
+              <path d="M348 366l-28 20 11 35"/>
+            </g>
+            <g fill="#7d858f">
+              <path class="debris" d="M374 183l18 7-10 18-18-9Z"/>
+              <path class="debris d2" d="M382 224l14 6-6 15-16-6Z"/>
+              <path class="debris d3" d="M361 291l21-4 4 18-19 7Z"/>
+              <path class="debris d4" d="M391 351l18 6-10 17-18-5Z"/>
+            </g>
+            <g fill="#59636d">
+              <path class="debris d3" d="M171 400l-13 16 14 12 16-16Z"/>
+              <path class="debris d2" d="M168 352l-15 7 8 15 14-8Z"/>
+            </g>
+            <text x="280" y="505" text-anchor="middle" fill="#8895a5" font-size="13" font-family="system-ui" letter-spacing="3">INSTITUTIONS CHANGE · SOURCES REMAIN</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="content">
+
+      <section class="section" id="guide" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Guide</span><h2>What this is — and what it is for</h2></div>
+          <p>This page is designed as a research map, not a collection of isolated “gotcha” quotations. It separates historical facts, interpretation, current policy and fair counter-arguments.</p>
+        </div>
+        <div class="guide-grid">
+          <article class="card"><div class="num">01 · PURPOSE</div><h3>Trace development</h3><p>Follow how the meaning, grounds and social consequences of disfellowshipping changed across more than a century of Watch Tower history.</p></article>
+          <article class="card"><div class="num">02 · METHOD</div><h3>Compare like with like</h3><p>Distinguish expulsion, disassociation, ordinary doctrinal disagreement, serious wrongdoing and later “apostasy” rules instead of collapsing them into one category.</p></article>
+          <article class="card"><div class="num">03 · EVIDENCE</div><h3>Prefer primary sources</h3><p>Official JW.org and Watchtower Online Library links are used wherever available. Older scans and transcriptions are labelled as archival.</p></article>
+          <article class="card"><div class="num">04 · FAIRNESS</div><h3>State the strongest defence</h3><p>Where a comparison can be answered by a Jehovah’s Witness distinction, that distinction is included rather than omitted.</p></article>
+          <article class="card"><div class="num">05 · USE</div><h3>Research & discussion</h3><p>Use the timelines and source IDs to check claims directly. Each major claim points toward a source entry with an outbound URL.</p></article>
+          <article class="card"><div class="num">06 · SCOPE</div><h3>1882 → 2026</h3><p>The dossier begins with Russell-era ideas of fellowship and ends with current context, including the 2024 terminology/greeting change and 2025 obedience language.</p></article>
+        </div>
+        <div class="callout">
+          <strong>Central research question:</strong>
+          <div class="quote">Did Watch Tower teaching simply preserve one unchanged biblical disciplinary rule, or did the grounds, authority structure and social consequences of exclusion materially develop over time?</div>
+        </div>
+      </section>
+
+      <section class="section" id="findings" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Executive findings</span><h2>The pattern in four movements</h2></div>
+          <p>The evidence is strongest when the history is described precisely rather than by saying “disfellowshipping was invented in 1952.” Earlier withdrawal of fellowship existed; the later system became more formal, centralised and socially restrictive.</p>
+        </div>
+        <div class="finding-grid">
+          <article class="card finding"><div class="big">I</div><strong>From fellowship to formal procedure</strong><p>Russell-era exclusion existed, but early material could distinguish loss of Christian fellowship from social punishment. By 1952 a detailed organisation-wide procedure existed.</p></article>
+          <article class="card finding"><div class="big">II</div><strong>Grounds expanded</strong><p>Later policy added or clarified doctrinal divisiveness, compliance with shunning, blood, tobacco, certain employment and voluntary disassociation.</p></article>
+          <article class="card finding"><div class="big">III</div><strong>Freedom language persisted</strong><p>Watchtower publications repeatedly defended the right to examine inherited religion and change belief, even while leaving JW identity carried major social consequences.</p></article>
+          <article class="card finding"><div class="big">IV</div><strong>Epistemic asymmetry</strong><p>Outsiders are often told to verify religious authority. Insiders have repeatedly been warned against “independent thinking” and examining apostate arguments.</p></article>
+          <article class="card finding"><div class="big">1974</div><strong>Policy did not move in one direction</strong><p>A notable 1974 moderation allowed more family discretion and humane contact before a substantial tightening in 1981.</p></article>
+          <article class="card finding"><div class="big">2024</div><strong>Current policy has changed again</strong><p>The organisation shifted to “removed from the congregation” language and permitted a simple greeting at meetings for many removed persons, while socialising remains restricted.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="dossier1" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Dossier I</span><h2>Origins, excommunication & the 1952 watershed</h2></div>
+          <p>The historically defensible claim is not that withdrawal of fellowship began in 1952. The key change is the evolution from narrower early fellowship rules toward an appointed, organisation-wide judicial and avoidance system.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="event"><div class="year">1882</div><div class="event-body"><h3>Differences of opinion distinguished from foundational denial</h3><p><em>Zion’s Watch Tower</em>, “An Unpleasant Duty,” says ordinary Christian differences are not normally a reason to disfellowship, while denial of Christ’s ransom crosses a foundational boundary. <a class="source-ref" href="#S01">S01</a></p><div class="chips"><span class="chip archive">archive</span><span class="chip">fellowship</span></div></div></div>
+          <div class="event"><div class="year">1887</div><div class="event-body"><h3>“Implied threat of disfellowship” criticised</h3><p>Russell criticises denominations for restraining independent doctrinal investigation through the threat of losing fellowship. <a class="source-ref" href="#S02">S02</a></p><div class="chips"><span class="chip archive">archive</span><span class="chip">authority</span></div></div></div>
+          <div class="event"><div class="year">1892</div><div class="event-body"><h3>A comparatively simple fellowship test</h3><p>“Christian Fellowship” presents the scriptural basis of fellowship/disfellowship as broader and simpler than denominational creeds, while still excluding denial of the ransom. <a class="source-ref" href="#S03">S03</a></p></div></div>
+          <div class="event"><div class="year">1904–06</div><div class="event-body"><h3>Withdrawal of Christian fellowship ≠ punishment</h3><p>Russell’s disciplinary model can involve the whole ecclesia and later explicitly distinguishes withdrawal of special Christian fellowship from punishment; ordinary courtesy remains. <a class="source-ref" href="#S04">S04</a> <a class="source-ref" href="#S05">S05</a></p></div></div>
+          <div class="event"><div class="year">1937</div><div class="event-body"><h3>Catholic excommunication threat ridiculed</h3><p><em>Consolation</em> criticises a reported Catholic threat of excommunication connected with possession of Watch Tower literature. <a class="source-ref" href="#S06">S06</a></p></div></div>
+          <div class="event"><div class="year">1944</div><div class="event-body"><h3>Structural shift to responsible brothers</h3><p>JW’s own later history identifies 1944 as a change from whole-congregation “church trials” toward responsible brothers handling serious cases. <a class="source-ref" href="#S07">S07</a></p><div class="chips"><span class="chip primary">official JW retrospective</span><span class="chip change">structural change</span></div></div></div>
+          <div class="event"><div class="year">1947</div><div class="event-body"><h3>Awake! attacks Catholic punitive excommunication</h3><p>“Are You Also Excommunicated?” argues that the Catholic punitive/“medicinal” system finds no support in the cited scriptures and calls it foreign to Bible teaching. <a class="source-ref" href="#S08">S08</a></p><div class="chips"><span class="chip archive">historical scan</span><span class="chip">excommunication</span></div></div></div>
+          <div class="event"><div class="year">1949</div><div class="event-body"><h3>Explicit organisational disfellowshipping instructions</h3><p><em>Counsel on Theocratic Organization</em> gives responsible mature brothers a role in deciding cases and disfellowshipping persistent wrongdoers. <a class="source-ref" href="#S09">S09</a></p></div></div>
+          <div class="event"><div class="year">1951</div><div class="event-body"><h3>Disfellowshipping explicitly required in moral cases</h3><p>The April 15 <em>Watchtower</em> says God’s Word orders disfellowshipping of an unrepentantly immoral person. This proves the practice predates March 1952. <a class="source-ref" href="#S10">S10</a></p><div class="chips"><span class="chip primary">official WOL</span></div></div></div>
+          <div class="event"><div class="year">1952</div><div class="event-body"><h3>Comprehensive formalisation</h3><p>“Propriety of Disfellowshiping” lays out appointed decision-makers, congregation-wide/organisation-wide consequences, notification, avoidance, reinstatement procedure and the famous no-greeting instruction. <a class="source-ref" href="#S11">S11</a> <a class="source-ref" href="#S12">S12</a></p><div class="chips"><span class="chip primary">official WOL</span><span class="chip change">watershed</span></div></div></div>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare">
+            <div class="side">Russell-era emphasis · 1904–1906</div>
+            <h3>Exclusion without social punishment</h3>
+            <p>The earlier model could withdraw special Christian fellowship while still insisting on ordinary kindness and courtesy. It also placed final serious judgment more directly with the ecclesia.</p>
+            <a class="source-ref" href="#S04">S04</a><a class="source-ref" href="#S05">S05</a>
+          </article>
+          <article class="compare right">
+            <div class="side">Watchtower · 1952</div>
+            <h3>Organisation-wide status + avoidance</h3>
+            <p>The later procedure gave appointed servants decisive responsibility, made the status portable across congregations and directed informed members to avoid ordinary social greeting.</p>
+            <a class="source-ref" href="#S11">S11</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="dossier2" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Dossier II</span><h2>How the grounds for removal expanded</h2></div>
+          <p>Not every later disfellowshipping ground had always been a disfellowshipping ground. The organisation’s own history acknowledges changes concerning blood and tobacco, while other Watchtower articles document doctrinal, associational and behavioural expansion.</p>
+        </div>
+
+        <div class="matrix">
+          <table>
+            <thead><tr><th>Date</th><th>Ground / policy</th><th>Historical significance</th><th>Sources</th></tr></thead>
+            <tbody>
+              <tr><td>1882–1892</td><td>Foundational denial such as Christ’s ransom; ordinary differences generally distinguished.</td><td>Comparatively narrow doctrinal boundary.</td><td><a class="source-ref" href="#S01">S01</a> <a class="source-ref" href="#S03">S03</a></td></tr>
+              <tr><td>1952</td><td>Serious moral wrongdoing plus “false doctrines,” backbiting and causing divisions.</td><td>Explicit “spiritual” grounds sit alongside moral offences.</td><td><a class="source-ref" href="#S13">S13</a></td></tr>
+              <tr><td>1955</td><td>Persistently associating with someone disfellowshipped after counsel.</td><td>Compliance with another person’s disciplinary status becomes enforceable.</td><td><a class="source-ref" href="#S14">S14</a></td></tr>
+              <tr><td>1956</td><td>Additional misconduct examples; approval/sanction of serious sexual wrongdoing discussed.</td><td>Responsibility can extend beyond the primary wrongdoer.</td><td><a class="source-ref" href="#S15">S15</a> <a class="source-ref" href="#S16">S16</a></td></tr>
+              <tr><td>1961</td><td>Deliberate, unrepentant acceptance/defence of blood transfusion.</td><td>A distinct Watchtower interpretation becomes an expulsion matter.</td><td><a class="source-ref" href="#S17">S17</a></td></tr>
+              <tr><td>1963</td><td>Refusal to respect shunning; marrying a disfellowshipped person in specified circumstances.</td><td>The disciplinary system becomes self-reinforcing.</td><td><a class="source-ref" href="#S18">S18</a> <a class="source-ref" href="#S19">S19</a></td></tr>
+              <tr><td>1973</td><td>Refusal to stop tobacco use.</td><td>Conduct discouraged for decades becomes expellable.</td><td><a class="source-ref" href="#S07">S07</a> <a class="source-ref" href="#S20">S20</a></td></tr>
+              <tr><td>1974</td><td>Certain employment regarded as directly contrary to biblical standards.</td><td>Disciplinary jurisdiction can reach economic activity.</td><td><a class="source-ref" href="#S21">S21</a></td></tr>
+              <tr><td>1981</td><td>Voluntary disassociation / deliberate rejection of JW faith treated like disfellowshipping.</td><td>Leaving voluntarily receives substantially equivalent social treatment.</td><td><a class="source-ref" href="#S22">S22</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warning">
+          <strong>Important qualification:</strong>
+          <p>“Disassociation” and “disfellowshipping” are administratively distinct categories. The historically significant point is that the 1981 material says deliberate rejecters of JW faith should be treated as disfellowshipped persons, making the social consequences substantially parallel.</p>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare"><div class="side">1974 moderation</div><h3>Family discretion increases</h3><p>“Maintaining a Balanced Viewpoint Toward Disfellowshiped Ones” warns against rigidity, allows certain humane contact, and says each family should decide the extent of association with disfellowshipped relatives outside the home.</p><a class="source-ref" href="#S23">S23</a></article>
+          <article class="compare right"><div class="side">1981 tightening</div><h3>Disassociation + stricter association rules</h3><p>September 1981 material treats deliberate departure from the faith like disfellowshipping and urges relatives outside the household to minimise unnecessary association.</p><a class="source-ref" href="#S22">S22</a> <a class="source-ref" href="#S24">S24</a></article>
+        </div>
+      </section>
+
+      <section class="section" id="dossier3" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Dossier III</span><h2>Freedom to change religion — and the consequences of leaving</h2></div>
+          <p>Watchtower publications repeatedly defend freedom of conscience and changing religion. The comparison becomes especially strong when those statements are placed beside the 1981 disassociation policy and later family-association instructions.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="event"><div class="year">1981</div><div class="event-body"><h3>Voluntary rejection receives expulsion-like treatment</h3><p>The September 15 <em>Watchtower</em> says people who deliberately reject JW faith and beliefs are to be viewed and treated as disfellowshipped. <a class="source-ref" href="#S22">S22</a></p></div></div>
+          <div class="event"><div class="year">1987</div><div class="event-body"><h3>“Each one should be free to choose his religion”</h3><p><em>Awake!</em> agrees with a reader’s statement supporting individual religious choice. <a class="source-ref" href="#S25">S25</a></p></div></div>
+          <div class="event"><div class="year">1999</div><div class="event-body"><h3>Freedom to change religion framed as a human right</h3><p><em>Awake!</em> cites Article 18 of the Universal Declaration of Human Rights, including freedom to change religion or belief. <a class="source-ref" href="#S26">S26</a></p></div></div>
+          <div class="event"><div class="year">2001</div><div class="event-body"><h3>Question inherited belief</h3><p><em>The Watchtower</em> urges readers to examine what they believe rather than accept inherited religion or authority uncritically. <a class="source-ref" href="#S27">S27</a></p></div></div>
+          <div class="event"><div class="year">2002</div><div class="event-body"><h3>Conversion should involve “no compulsion”</h3><p>The Watchtower argues that pressuring people to change religion is wrong and genuine worship must be voluntary. <a class="source-ref" href="#S28">S28</a></p></div></div>
+          <div class="event"><div class="year">2009</div><div class="event-body"><h3>Religion should not force a choice between belief and family</h3><p>“Is It Wrong to Change Your Religion?” presents religious change as a matter of conscience and rejects forcing a person to worship contrary to conscience or choose between belief and family. <a class="source-ref" href="#S29">S29</a></p><div class="chips"><span class="chip primary">official WOL/JW</span></div></div></div>
+          <div class="event"><div class="year">2013</div><div class="event-body"><h3>Family association sharply restricted</h3><p>A Watchtower article tells members not to seek excuses for association with a disfellowshipped relative, explicitly mentioning electronic communication. <a class="source-ref" href="#S30">S30</a></p></div></div>
+          <div class="event"><div class="year">2026</div><div class="event-body"><h3>Current resignation FAQ emphasises choice</h3><p>JW.org currently says a person may resign orally or in writing, elders may not coerce someone to remain, and each person makes their own choice regarding religion. <a class="source-ref" href="#S31">S31</a></p><div class="chips"><span class="chip current">current</span><span class="chip primary">official JW.org</span></div></div></div>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare">
+            <div class="side">Public principle · 2009</div>
+            <h3>Religious choice belongs to the conscience</h3>
+            <p>The article supports changing religion when conscience and investigation require it and rejects coercive family pressure in that decision.</p>
+            <a class="source-ref" href="#S29">S29</a>
+          </article>
+          <article class="compare right">
+            <div class="side">Internal consequence · 1981 onward</div>
+            <h3>Leaving JW identity carries social consequences</h3>
+            <p>Deliberate disassociation is treated as expulsion for association purposes. Later material strongly restricts contact, although policy was partially softened in 2024.</p>
+            <a class="source-ref" href="#S22">S22</a> <a class="source-ref" href="#S32">S32</a>
+          </article>
+        </div>
+
+        <div class="callout">
+          <strong>Fair formulation:</strong>
+          <p>The strongest criticism is not that freedom of religion legally requires relatives to maintain ordinary social contact. Rather, Watchtower’s public defence of free religious choice can be compared with the substantial social consequences its internal discipline historically attached to exercising that choice after baptism.</p>
+        </div>
+      </section>
+
+      <section class="section" id="dossier4" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Dossier IV</span><h2>“Think for yourself” versus “independent thinking”</h2></div>
+          <p>This dossier asks whether the same standard of critical verification recommended when evaluating other religions remains equally available when evaluating Watchtower authority itself.</p>
+        </div>
+
+        <div class="matrix">
+          <table>
+            <thead><tr><th>Date</th><th>Message</th><th>Context</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td>1953</td><td>Warns against blindly following religious leaders.</td><td>Evaluating religious authority.</td><td><a class="source-ref" href="#S33">S33</a></td></tr>
+              <tr><td>1957</td><td>Criticises people whose thinking is channelled and supplied ready-made.</td><td>Warning about propaganda and passive thinking.</td><td><a class="source-ref" href="#S34">S34</a></td></tr>
+              <tr><td>1960</td><td>Says the goal of independent thinking should be rejected.</td><td>Primarily frames independence from God as the problem.</td><td><a class="source-ref" href="#S35">S35</a></td></tr>
+              <tr><td>1963</td><td>People raised in religious systems who love truth “must think for themselves.”</td><td>Encouraging people to challenge inherited religion.</td><td><a class="source-ref" href="#S36">S36</a></td></tr>
+              <tr><td>1964</td><td>Readers should prove their religion for themselves from Scripture.</td><td>Evaluating one’s inherited religion.</td><td><a class="source-ref" href="#S37">S37</a></td></tr>
+              <tr><td>1966</td><td>Questioning the use of a governing body of imperfect humans is described as independent thinking.</td><td>Organisational authority becomes explicit.</td><td><a class="source-ref" href="#S38">S38</a></td></tr>
+              <tr><td>1983</td><td>“Avoid Independent Thinking”; questioning organisational counsel is given as an example.</td><td>Independent thought connected with Satanic influence.</td><td><a class="source-ref" href="#S39">S39</a></td></tr>
+              <tr><td>1986</td><td>Members are warned not to read apostate arguments merely to see what they say.</td><td>Information-boundary rule.</td><td><a class="source-ref" href="#S40">S40</a></td></tr>
+              <tr><td>2001</td><td>Check beliefs; imitate the Beroeans.</td><td>Personal verification praised.</td><td><a class="source-ref" href="#S27">S27</a></td></tr>
+              <tr><td>2008</td><td>Beroeans praised for checking Paul’s teaching against Scripture.</td><td>Even apostolic teaching is tested.</td><td><a class="source-ref" href="#S41">S41</a></td></tr>
+              <tr><td>2011</td><td>Do not read apostate books, websites or blogs.</td><td>Restrictions on adversarial sources continue.</td><td><a class="source-ref" href="#S42">S42</a></td></tr>
+              <tr><td>2016</td><td>The “faithful slave” is described as the only channel dispensing spiritual food.</td><td>Exclusive interpretive channel.</td><td><a class="source-ref" href="#S43">S43</a></td></tr>
+              <tr><td>2017</td><td>The Governing Body says it is neither inspired nor infallible and can err.</td><td>Explicit institutional fallibility.</td><td><a class="source-ref" href="#S44">S44</a></td></tr>
+              <tr><td>2024</td><td>“Independent thinking” remains listed among spiritual vulnerabilities.</td><td>The terminology persists in recent material.</td><td><a class="source-ref" href="#S45">S45</a></td></tr>
+              <tr><td>2025</td><td>Members are urged to be quick to obey theocratic direction even when its reason is not understood.</td><td>Current obedience model.</td><td><a class="source-ref" href="#S46">S46</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="arrowbar">the epistemic asymmetry</div>
+        <div class="compare-grid">
+          <article class="compare"><div class="side">When testing another religion</div><h3>Investigate · verify · think</h3><p>Watchtower material praises independent examination of inherited belief, checking religious teachers against Scripture and changing religion when convinced.</p><a class="source-ref" href="#S36">S36</a> <a class="source-ref" href="#S37">S37</a> <a class="source-ref" href="#S41">S41</a></article>
+          <article class="compare right"><div class="side">When testing Watchtower adversarially</div><h3>Avoid “apostate” information</h3><p>Other Watchtower material warns against examining apostate arguments and associates questioning organisational counsel with “independent thinking.”</p><a class="source-ref" href="#S39">S39</a> <a class="source-ref" href="#S40">S40</a> <a class="source-ref" href="#S42">S42</a></article>
+        </div>
+
+        <div class="callout">
+          <strong>The strongest internal defence:</strong>
+          <p>A Jehovah’s Witness can argue that there is no contradiction: critical investigation is appropriate until one has established which organisation God uses; thereafter, resistance to that established arrangement is viewed as independence from God, not merely intellectual inquiry.</p>
+        </div>
+        <div class="callout warning">
+          <strong>The resulting question:</strong>
+          <p>If the Governing Body openly acknowledges that it is not inspired or infallible and can make doctrinal or organisational errors, what mechanism permits a member to test a suspected error when adversarial sources and certain forms of organisational questioning are themselves discouraged?</p>
+        </div>
+      </section>
+
+      <section class="section" id="current" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Current context</span><h2>What changed in 2024 — and what remained in 2025–2026</h2></div>
+          <p>Historical criticism should not freeze policy in 1952, 1981 or 2013. The present system includes important modifications.</p>
+        </div>
+        <div class="current-box">
+          <div>
+            <h3>2024: partial moderation</h3>
+            <p>Watchtower material shifted terminology toward a person being “removed from the congregation.” For many removed persons, an individual Witness may now choose to give a simple greeting at a congregation meeting or invite the person to attend. Ordinary socialising remains restricted, and active promoters of apostasy are treated more strictly.</p>
+            <a class="btn" href="#S32">See source S32</a>
+          </div>
+          <div>
+            <h3>2025–2026: authority language remains strong</h3>
+            <p>The March 2025 <em>Watchtower</em> says Witnesses receive “theocratic direction” from local elders, circuit overseers, branch offices and the Governing Body, and urges members to be quick to obey even when they cannot understand the reason for the direction. The current JW.org resignation FAQ simultaneously states that elders may not coerce a person to remain and that religious choice belongs to the individual.</p>
+            <a class="source-ref" href="#S46">S46</a><a class="source-ref" href="#S31">S31</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="master" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Master chronology</span><h2>One continuous historical view</h2></div>
+          <p>This condensed sequence joins the four dossiers into a single development map.</p>
+        </div>
+        <div class="matrix">
+          <table>
+            <thead><tr><th>Date</th><th>Development</th><th>Theme</th></tr></thead>
+            <tbody>
+              <tr><td>1882</td><td>Ordinary Christian differences distinguished from foundational denial.</td><td>Fellowship boundary</td></tr>
+              <tr><td>1887</td><td>Threat of disfellowship criticised as a restraint on religious investigation.</td><td>Conscience</td></tr>
+              <tr><td>1892</td><td>Broad/simple fellowship test centred on foundational Christian belief.</td><td>Doctrine</td></tr>
+              <tr><td>1904–1906</td><td>Congregational discipline distinguished from punishment; courtesy retained.</td><td>Procedure / social treatment</td></tr>
+              <tr><td>1937</td><td>Catholic excommunication threat criticised.</td><td>Other religions</td></tr>
+              <tr><td>1944</td><td>Serious cases shift toward responsible congregation brothers.</td><td>Authority structure</td></tr>
+              <tr><td>1947</td><td><em>Awake!</em> attacks Catholic punitive excommunication.</td><td>Excommunication</td></tr>
+              <tr><td>1949–1951</td><td>Explicit Watchtower disfellowshipping procedure is already developing.</td><td>Transition</td></tr>
+              <tr><td>1952</td><td>Comprehensive judicial / avoidance system formalised.</td><td>Watershed</td></tr>
+              <tr><td>1955–1963</td><td>Refusal to cooperate with shunning can itself become disciplinary.</td><td>Secondary compliance</td></tr>
+              <tr><td>1961</td><td>Unrepentant blood-transfusion acceptance becomes a removal issue.</td><td>Expanded grounds</td></tr>
+              <tr><td>1963–1966</td><td>Outsiders told to think for themselves while “independent thinking” becomes an internal warning category.</td><td>Epistemic asymmetry</td></tr>
+              <tr><td>1973</td><td>Persistent tobacco use becomes disfellowshipping matter.</td><td>Expanded grounds</td></tr>
+              <tr><td>1974</td><td>Family/contact policy temporarily moderates.</td><td>Social treatment</td></tr>
+              <tr><td>1981</td><td>Disassociation receives disfellowshipping-like treatment; family contact tightens.</td><td>Leaving religion</td></tr>
+              <tr><td>1983–1986</td><td>“Independent thinking” and examination of apostate material strongly discouraged.</td><td>Information control</td></tr>
+              <tr><td>1999–2009</td><td>Watchtower publications strongly defend freedom to examine and change religion.</td><td>Freedom of conscience</td></tr>
+              <tr><td>2011–2017</td><td>Apostate-source restrictions continue; Governing Body calls itself the only channel, then explicitly acknowledges fallibility.</td><td>Authority / fallibility</td></tr>
+              <tr><td>2024</td><td>Terminology and greeting rules partially soften.</td><td>Current policy change</td></tr>
+              <tr><td>2025</td><td>Prompt obedience to theocratic direction remains strongly emphasised.</td><td>Current authority</td></tr>
+              <tr><td>2026</td><td>Current JW.org FAQ states members may resign and elders may not pressure them to remain.</td><td>Current public position</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="sources" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Source index</span><h2>Direct URLs & provenance</h2></div>
+          <p>Use the filters below. “Official” links point to JW.org / Watchtower Online Library. “Archive” entries are historical scans or transcriptions used when official digitisation is unavailable or less convenient.</p>
+        </div>
+        <div class="sources-toolbar">
+          <button class="filter active" data-filter="all">All sources</button>
+          <button class="filter" data-filter="official">Official JW / WOL</button>
+          <button class="filter" data-filter="archive">Historical archive</button>
+          <button class="filter" data-filter="secondary">Secondary / contextual</button>
+        </div>
+        <div class="source-list" id="sourceList">
+
+          <article class="source" id="S01" data-type="archive"><span class="sid">S01 · ARCHIVE</span><h4>1882 — “An Unpleasant Duty”</h4><p>Zion’s Watch Tower, December 1882. Early distinction between ordinary differences and foundational denial.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.pastorrussell.pl/przedruki-ang/r0414-0-001-december-1882/">https://www.pastorrussell.pl/przedruki-ang/r0414-0-001-december-1882/ ↗</a></article>
+          <article class="source" id="S02" data-type="archive"><span class="sid">S02 · ARCHIVE</span><h4>1887 — Implied threat of disfellowship</h4><p>Historical Watch Tower transcription.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.pastorrussell.pl/przedruki-ang/r0918-0-001-april-1887/">https://www.pastorrussell.pl/przedruki-ang/r0918-0-001-april-1887/ ↗</a></article>
+          <article class="source" id="S03" data-type="archive"><span class="sid">S03 · ARCHIVE</span><h4>1892 — “Christian Fellowship”</h4><p>Russell-era discussion of the basis of fellowship and disfellowship.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.pastorrussell.pl/przedruki-ang/r1465-330-christian-fellowship/">https://www.pastorrussell.pl/przedruki-ang/r1465-330-christian-fellowship/ ↗</a></article>
+          <article class="source" id="S04" data-type="archive"><span class="sid">S04 · ARCHIVE</span><h4>1904 — The New Creation, discipline</h4><p>Russell’s discussion of congregational order and discipline.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.ctrussell.us/d01f9bc2626a96a38625699900786730/ca82abdc19f6998a8625645200830d03_7b4ad6db.html">https://www.ctrussell.us/…/ca82abdc…html ↗</a></article>
+          <article class="source" id="S05" data-type="archive"><span class="sid">S05 · ARCHIVE</span><h4>1906 — “Punishing Fellow-Members”</h4><p>Withdrawal of special fellowship distinguished from punishment; courtesy retained.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.pastorrussell.pl/przedruki-ang/r3744-89-punishing-fellow-members/">https://www.pastorrussell.pl/przedruki-ang/r3744-89-punishing-fellow-members/ ↗</a></article>
+          <article class="source" id="S06" data-type="archive"><span class="sid">S06 · ARCHIVE</span><h4>1937 — Consolation volume scan</h4><p>Includes criticism of Catholic excommunication threats connected with Watch Tower literature.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://da-ip.getmyip.com/PDF/publications/old%20publications/1920-1939/1937%20-%20Consolation%20%28Oct-Dec%29.pdf">https://da-ip.getmyip.com/…/1937-Consolation.pdf ↗</a></article>
+          <article class="source" id="S07" data-type="official"><span class="sid">S07 · OFFICIAL</span><h4>God’s Kingdom Rules! — moral standards history</h4><p>JW retrospective identifying 1892, 1904, 1944, 1952, blood and tobacco developments.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.jw.org/en/library/books/gods-kingdom/standards/moral/">https://www.jw.org/en/library/books/gods-kingdom/standards/moral/ ↗</a></article>
+          <article class="source" id="S08" data-type="archive"><span class="sid">S08 · ARCHIVE</span><h4>1947 — Awake! complete volume scan</h4><p>Contains “Are You Also Excommunicated?” (Jan. 8, pp. 27–28).</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.da-ip.getmyip.com/PDF/Publications/Old%20Publications/1940-1959/1947%20-%20Awake%21.pdf">https://www.da-ip.getmyip.com/…/1947-Awake.pdf ↗</a></article>
+          <article class="source" id="S09" data-type="archive"><span class="sid">S09 · ARCHIVE</span><h4>1949 — Counsel on Theocratic Organization</h4><p>Historical organisational instructions concerning disfellowshipping.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://da-ip.getmyip.com/PDF/publications/old%20publications/1940-1959/1949%20-%20Counsel%20on%20Theocratic%20Organization%20for%20Jehovah%27s%20Witnesses%20-%20text.pdf">https://da-ip.getmyip.com/…/1949-Counsel-on-Theocratic-Organization.pdf ↗</a></article>
+          <article class="source" id="S10" data-type="official"><span class="sid">S10 · OFFICIAL</span><h4>1951 — “Let Marriage Be Honorable Among All”</h4><p>Watchtower Online Library; explicit pre-1952 disfellowshipping language.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1951281">https://wol.jw.org/en/wol/d/r1/lp-e/1951281 ↗</a></article>
+          <article class="source" id="S11" data-type="official"><span class="sid">S11 · OFFICIAL</span><h4>1952 — “Propriety of Disfellowshiping”</h4><p>Major March 1 procedural article.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1952161">https://wol.jw.org/en/wol/d/r1/lp-e/1952161 ↗</a></article>
+          <article class="source" id="S12" data-type="official"><span class="sid">S12 · OFFICIAL</span><h4>1952 — WOL search / Nov. 15 Questions From Readers</h4><p>Includes family and support consequences of the disfellowshipping order.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/s/r1/lp-e?q=disfellowship">https://wol.jw.org/en/wol/s/r1/lp-e?q=disfellowship ↗</a></article>
+          <article class="source" id="S13" data-type="official"><span class="sid">S13 · OFFICIAL</span><h4>1952 — “Keeping the Organization Clean”</h4><p>Moral and “spiritual” grounds including false teaching and divisiveness.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1952160">https://wol.jw.org/en/wol/d/r1/lp-e/1952160 ↗</a></article>
+          <article class="source" id="S14" data-type="official"><span class="sid">S14 · OFFICIAL</span><h4>1955 — Questions From Readers</h4><p>Discusses continuing association with a disfellowshipped person after counsel.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1955727">https://wol.jw.org/en/wol/d/r1/lp-e/1955727 ↗</a></article>
+          <article class="source" id="S15" data-type="official"><span class="sid">S15 · OFFICIAL</span><h4>1956 — “Community or Congregational Interests”</h4><p>Additional examples of conduct handled congregationally.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1956528">https://wol.jw.org/en/wol/d/r1/lp-e/1956528 ↗</a></article>
+          <article class="source" id="S16" data-type="official"><span class="sid">S16 · OFFICIAL</span><h4>1956 — “Theocratic Marriage in an Alien World”</h4><p>Disciplinary implications surrounding fornication and parental sanction.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1956687">https://wol.jw.org/en/wol/d/r1/lp-e/1956687 ↗</a></article>
+          <article class="source" id="S17" data-type="official"><span class="sid">S17 · OFFICIAL</span><h4>1961 — Questions From Readers: blood transfusion</h4><p>Links unrepentant acceptance/advocacy of blood transfusion to disfellowshipping.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1961049">https://wol.jw.org/en/wol/d/r1/lp-e/1961049 ↗</a></article>
+          <article class="source" id="S18" data-type="official"><span class="sid">S18 · OFFICIAL</span><h4>1963 — “What Disfellowshiping Means”</h4><p>Strong shunning instructions and warning against deliberate non-compliance.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/pc/r1/lp-e/1200022585/20/2">https://wol.jw.org/en/wol/pc/r1/lp-e/1200022585/20/2 ↗</a></article>
+          <article class="source" id="S19" data-type="official"><span class="sid">S19 · OFFICIAL</span><h4>1963 — engagement/marriage question</h4><p>Discusses marrying a disfellowshipped person in specified circumstances.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1963526">https://wol.jw.org/en/wol/d/r1/lp-e/1963526 ↗</a></article>
+          <article class="source" id="S20" data-type="official"><span class="sid">S20 · OFFICIAL</span><h4>1973 — Kingdom Ministry on tobacco implementation</h4><p>Implementation of the 1973 tobacco policy.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/201973407">https://wol.jw.org/en/wol/d/r1/lp-e/201973407 ↗</a></article>
+          <article class="source" id="S21" data-type="official"><span class="sid">S21 · OFFICIAL</span><h4>1974 — Kingdom Ministry on employment</h4><p>Discusses employment that may place a person outside congregation standards.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/201974044">https://wol.jw.org/en/wol/d/r1/lp-e/201974044 ↗</a></article>
+          <article class="source" id="S22" data-type="official"><span class="sid">S22 · OFFICIAL</span><h4>1981 — “Disfellowshiping—How to View It”</h4><p>Foundational disassociation / treatment-as-disfellowshipped language.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1981688">https://wol.jw.org/en/wol/d/r1/lp-e/1981688 ↗</a></article>
+          <article class="source" id="S23" data-type="official"><span class="sid">S23 · OFFICIAL</span><h4>1974 — “Maintaining a Balanced Viewpoint…”</h4><p>Notable moderation concerning humane treatment and family discretion.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1974565">https://wol.jw.org/en/wol/d/r1/lp-e/1974565 ↗</a></article>
+          <article class="source" id="S24" data-type="official"><span class="sid">S24 · OFFICIAL</span><h4>1981 — family association follow-up</h4><p>Instructions concerning relatives outside the household.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1981689">https://wol.jw.org/en/wol/d/r1/lp-e/1981689 ↗</a></article>
+          <article class="source" id="S25" data-type="official"><span class="sid">S25 · OFFICIAL</span><h4>1987 — Awake! reader response</h4><p>Agreement that each person should be free to choose religion.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/101987731">https://wol.jw.org/en/wol/d/r1/lp-e/101987731 ↗</a></article>
+          <article class="source" id="S26" data-type="official"><span class="sid">S26 · OFFICIAL</span><h4>1999 — “Religious Intolerance Today”</h4><p>Freedom of religion, including freedom to change belief.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/101999001">https://wol.jw.org/en/wol/d/r1/lp-e/101999001 ↗</a></article>
+          <article class="source" id="S27" data-type="official"><span class="sid">S27 · OFFICIAL</span><h4>2001 — “Why Do You Believe What You Believe?”</h4><p>Encourages examination of inherited religious belief and uses the Beroeans.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.jw.org/en/library/magazines/w20010801/Why-Do-You-Believe-What-You-Believe/">https://www.jw.org/en/library/magazines/w20010801/Why-Do-You-Believe-What-You-Believe/ ↗</a></article>
+          <article class="source" id="S28" data-type="official"><span class="sid">S28 · OFFICIAL</span><h4>2002 — “All True Christians Are Evangelizers”</h4><p>States that pressuring people to change religion is wrong and conversion should not be compelled.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/pc/r1/lp-e/1200276700/1/0">https://wol.jw.org/en/wol/pc/r1/lp-e/1200276700/1/0 ↗</a></article>
+          <article class="source" id="S29" data-type="official"><span class="sid">S29 · OFFICIAL</span><h4>2009 — “Is It Wrong to Change Your Religion?”</h4><p>Awake!, July 2009, pp. 28–29.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/102009251">https://wol.jw.org/en/wol/d/r1/lp-e/102009251 ↗</a></article>
+          <article class="source" id="S30" data-type="official"><span class="sid">S30 · OFFICIAL</span><h4>2013 — “Let Nothing Distance You From Jehovah”</h4><p>Family-contact restrictions, including electronic communication.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.jw.org/en/library/magazines/w20130115/let-nothing-distance-you-from-jehovah/">https://www.jw.org/en/library/magazines/w20130115/let-nothing-distance-you-from-jehovah/ ↗</a></article>
+          <article class="source" id="S31" data-type="official"><span class="sid">S31 · OFFICIAL · CURRENT</span><h4>Current JW.org FAQ — Can a Person Resign?</h4><p>States that a person can resign, elders may not coerce someone to remain, and religious choice belongs to the person.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.jw.org/en/jehovahs-witnesses/faq/resign/">https://www.jw.org/en/jehovahs-witnesses/faq/resign/ ↗</a></article>
+          <article class="source" id="S32" data-type="official"><span class="sid">S32 · OFFICIAL · 2024</span><h4>2024 — revised treatment of removed persons</h4><p>Updated terminology, possible simple greeting/invitation at meetings for many removed persons, continued restriction on socialising.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/2024534">https://wol.jw.org/en/wol/d/r1/lp-e/2024534 ↗</a></article>
+          <article class="source" id="S33" data-type="official"><span class="sid">S33 · OFFICIAL</span><h4>1953 — “Choosing New World Life”</h4><p>Warning against blindly following religious leaders.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1953088">https://wol.jw.org/en/wol/d/r1/lp-e/1953088 ↗</a></article>
+          <article class="source" id="S34" data-type="official"><span class="sid">S34 · OFFICIAL</span><h4>1957 — “Will You Get to Live on Earth Forever?”</h4><p>Critique of channelled, ready-made thinking.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1957565">https://wol.jw.org/en/wol/d/r1/lp-e/1957565 ↗</a></article>
+          <article class="source" id="S35" data-type="official"><span class="sid">S35 · OFFICIAL</span><h4>1960 — “Safeguard Your Thinking Ability”</h4><p>Rejecting the goal of “independent thinking,” framed primarily as independence from God.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1960122">https://wol.jw.org/en/wol/d/r1/lp-e/1960122 ↗</a></article>
+          <article class="source" id="S36" data-type="official"><span class="sid">S36 · OFFICIAL</span><h4>1963 — “How Strong Is Your Faith?”</h4><p>People raised in religious systems are told they must think for themselves.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1963002">https://wol.jw.org/en/wol/d/r1/lp-e/1963002 ↗</a></article>
+          <article class="source" id="S37" data-type="official"><span class="sid">S37 · OFFICIAL</span><h4>1964 — “Should You Change Your Religion?”</h4><p>Readers urged to prove their religion for themselves from the Bible.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1964361">https://wol.jw.org/en/wol/d/r1/lp-e/1964361 ↗</a></article>
+          <article class="source" id="S38" data-type="official"><span class="sid">S38 · OFFICIAL</span><h4>1966 — “Intellectual Freedom or Captivity to the Christ?”</h4><p>Connects questioning organisational/governing-body direction with “independent thinking.”</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1966400">https://wol.jw.org/en/wol/d/r1/lp-e/1966400 ↗</a></article>
+          <article class="source" id="S39" data-type="official"><span class="sid">S39 · OFFICIAL</span><h4>1983 — “Exposing the Devil’s Subtle Designs”</h4><p>“Avoid Independent Thinking”; questioning organisational counsel is used as an example.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/1983046">https://wol.jw.org/en/wol/d/r1/lp-e/1983046 ↗</a></article>
+          <article class="source" id="S40" data-type="official"><span class="sid">S40 · OFFICIAL</span><h4>1986 — “‘Do Not Be Quickly Shaken From Your Reason’”</h4><p>Warns against reading apostate literature merely to test what it says.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/pc/r1/lp-e/1200270412/46/6">https://wol.jw.org/en/wol/pc/r1/lp-e/1200270412/46/6 ↗</a></article>
+          <article class="source" id="S41" data-type="official"><span class="sid">S41 · OFFICIAL</span><h4>2008 — “How to Find the True Religion”</h4><p>Praises the Beroeans for checking Paul’s teaching against Scripture.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/102008083">https://wol.jw.org/en/wol/d/r1/lp-e/102008083 ↗</a></article>
+          <article class="source" id="S42" data-type="official"><span class="sid">S42 · OFFICIAL</span><h4>2011 — warning against apostate media</h4><p>Warns against reading apostate books, websites and blogs.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/2011524">https://wol.jw.org/en/wol/d/r1/lp-e/2011524 ↗</a></article>
+          <article class="source" id="S43" data-type="official"><span class="sid">S43 · OFFICIAL</span><h4>2016 — “Do You Highly Esteem Jehovah’s Own Book?”</h4><p>Describes the faithful slave as the only channel for dispensing spiritual food.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/2016849">https://wol.jw.org/en/wol/d/r1/lp-e/2016849 ↗</a></article>
+          <article class="source" id="S44" data-type="official"><span class="sid">S44 · OFFICIAL</span><h4>2017 — “Who Is Leading God’s People Today?”</h4><p>States that the Governing Body is neither inspired nor infallible and can err doctrinally or organisationally.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/2017283">https://wol.jw.org/en/wol/d/r1/lp-e/2017283 ↗</a></article>
+          <article class="source" id="S45" data-type="official"><span class="sid">S45 · OFFICIAL · 2024</span><h4>2024 — “Keep on Guard Against Temptation”</h4><p>Recent use of “independent thinking” as a spiritual vulnerability.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/pc/r1/lp-e/1200270047/50/2">https://wol.jw.org/en/wol/pc/r1/lp-e/1200270047/50/2 ↗</a></article>
+          <article class="source" id="S46" data-type="official"><span class="sid">S46 · OFFICIAL · 2025</span><h4>2025 — “Keep Walking by Faith”</h4><p>Current-era article encouraging prompt obedience to theocratic direction even when its reason is not understood.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://wol.jw.org/en/wol/d/r1/lp-e/2025325">https://wol.jw.org/en/wol/d/r1/lp-e/2025325 ↗</a></article>
+          <article class="source" id="S47" data-type="secondary"><span class="sid">S47 · SECONDARY</span><h4>JWfacts — Disfellowshipping & shunning overview</h4><p>Useful secondary chronology and scan-finding aid; primary sources above should be preferred for formal argument.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://www.jwfacts.com/watchtower/disfellowship-shunning.php">https://www.jwfacts.com/watchtower/disfellowship-shunning.php ↗</a></article>
+          <article class="source" id="S48" data-type="secondary"><span class="sid">S48 · SECONDARY</span><h4>Beroean Pickets — “A Weapon of Darkness”</h4><p>Critical discussion of the 1947 excommunication article.</p><a class="url" target="_blank" rel="noopener noreferrer" href="https://beroeans.net/2014/05/27/a-weapon-of-darkness">https://beroeans.net/2014/05/27/a-weapon-of-darkness ↗</a></article>
+        </div>
+      </section>
+
+      <section class="section" id="method" data-searchable>
+        <div class="section-head">
+          <div><span class="section-tag">Methodology</span><h2>How to use the dossier responsibly</h2></div>
+          <p>Historical comparison is strongest when it avoids both institutional apologetics and anti-institutional exaggeration.</p>
+        </div>
+        <details open><summary>1. Do not say disfellowshipping was “invented” in 1952</summary><div class="detail-body">Withdrawal of fellowship and even the word “disfellowship” appear much earlier. The better claim is that the recognisably modern judicial/organisation-wide avoidance system was progressively formalised, with 1952 a major watershed.</div></details>
+        <details><summary>2. Distinguish excommunication from every form of congregational exclusion</summary><div class="detail-body">The 1947 <em>Awake!</em> article attacks the Catholic hierarchical punitive/medicinal system. It should not be paraphrased as saying every possible removal of an immoral Christian is unbiblical.</div></details>
+        <details><summary>3. Distinguish disassociation from disfellowshipping</summary><div class="detail-body">The administrative categories differ. The relevant historical point is the 1981 decision to treat deliberate rejecters of JW faith like disfellowshipped persons for association purposes.</div></details>
+        <details><summary>4. Do not freeze present policy in the past</summary><div class="detail-body">Greeting rules and terminology changed in 2024. Any contemporary discussion should state the current position as well as the historical rule.</div></details>
+        <details><summary>5. Separate legal rights from ethical/social pressure</summary><div class="detail-body">Freedom of religion does not straightforwardly impose a legal duty on private relatives to maintain ordinary social contact. The stronger comparison concerns whether the organisation’s public language about free religious choice sits comfortably with the internal social consequences historically attached to leaving.</div></details>
+        <details><summary>6. Test both sides with the same evidentiary standard</summary><div class="detail-body">Whenever possible, open the primary source and read the surrounding paragraphs. Avoid relying on quotation memes, cropped screenshots or hostile summaries when the original Watchtower text is available.</div></details>
+
+        <div class="callout">
+          <strong>Recommended formulation:</strong>
+          <p>The historical record shows development rather than a single unchanged rule: narrower early fellowship concepts, a mid-century shift toward appointed judicial authority, expanding grounds for expulsion, fluctuating social-treatment rules, strong public advocacy of religious choice, and continuing internal restrictions on certain forms of adversarial religious inquiry.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="footer">
+      <div><strong>Watchtower Authority, Conscience & Shunning</strong><br>Historical research dossier · 1882–2026</div>
+      <div>© 2026 · Research & commentary. Not affiliated with Jehovah’s Witnesses, Watch Tower Bible and Tract Society, JW.org or Watchtower Online Library.<br>Last updated: 5 September 2026.</div>
+    </footer>
+  </main>
+</div>
+
+<div class="floating">
+  <button class="floatbtn" id="quickBtn" aria-label="Open quick index" title="Quick index">☷</button>
+  <button class="floatbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">↑</button>
+</div>
+<div class="floatpanel" id="quickPanel">
+  <strong style="display:block;padding:4px 8px 7px;color:#fff">Quick index</strong>
+  <a href="#dossier1">I · Origins & 1952</a>
+  <a href="#dossier2">II · Expanding grounds</a>
+  <a href="#dossier3">III · Freedom to leave</a>
+  <a href="#dossier4">IV · Independent thinking</a>
+  <a href="#current">Current 2024–2026 context</a>
+  <a href="#master">Master chronology</a>
+  <a href="#sources">Direct source URLs</a>
+  <a href="#method">Method & fairness</a>
+</div>
+
+<script>
+const sidebar = document.getElementById('sidebar');
+document.getElementById('menuBtn')?.addEventListener('click',()=>sidebar.classList.toggle('open'));
+document.querySelectorAll('.sidebar a').forEach(a=>a.addEventListener('click',()=>sidebar.classList.remove('open')));
+
+const qp=document.getElementById('quickPanel');
+document.getElementById('quickBtn').addEventListener('click',()=>qp.classList.toggle('open'));
+qp.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>qp.classList.remove('open')));
+
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  document.getElementById('progress').style.width=pct+'%';
+});
+
+const sections=[...document.querySelectorAll('section[id]')];
+const navLinks=[...document.querySelectorAll('#nav a')];
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+    }
+  });
+},{rootMargin:'-20% 0px -68% 0px',threshold:.01});
+sections.forEach(s=>obs.observe(s));
+
+document.querySelectorAll('.filter').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.source').forEach(s=>{
+      s.classList.toggle('hide',f!=='all' && s.dataset.type!==f);
+    });
+  });
+});
+
+const search=document.getElementById('siteSearch');
+search.addEventListener('input',()=>{
+  const q=search.value.trim().toLowerCase();
+  document.querySelectorAll('[data-searchable]').forEach(el=>el.classList.remove('hidden-by-search'));
+  document.querySelectorAll('.source').forEach(el=>el.classList.remove('hidden-by-search'));
+  if(!q){
+    document.querySelectorAll('.highlight').forEach(el=>el.classList.remove('highlight'));
+    return;
+  }
+  document.querySelectorAll('.event-body,.card,.compare,details,.source,tr').forEach(el=>{
+    el.classList.toggle('highlight',el.innerText.toLowerCase().includes(q));
+  });
+  const matches=[...document.querySelectorAll('.highlight')];
+  if(matches.length) matches[0].scrollIntoView({behavior:'smooth',block:'center'});
+});
+
+document.addEventListener('click',e=>{
+  if(!qp.contains(e.target) && e.target.id!=='quickBtn') qp.classList.remove('open');
+});
+
+if(location.hash){
+  setTimeout(()=>document.querySelector(location.hash)?.scrollIntoView({block:'start'}),80);
+}
+</script>
+</body>
+</html>
