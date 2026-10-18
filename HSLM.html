@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOCOL: HSLM</title>
+    <style>
+        /* --- BASE STYLES & TYPOGRAPHY --- */
+        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+
+        :root {
+            --neon-green: #00ff41;
+            --neon-cyan: #00f3ff;
+            --neon-pink: #ff0055;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('HSLM.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: var(--neon-green);
+            font-family: 'VT323', monospace;
+            font-size: 1.3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Subtle dark overlay to ensure text doesn't get washed out by the bright image */
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.15); 
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* --- CRYSTAL CLEAR GLASS TERMINAL BOX --- */
+        .container {
+            width: 85%;
+            max-width: 850px;
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(2px); 
+            -webkit-backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 8vh auto 1rem auto; 
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        #terminal {
+            flex-grow: 1;
+            overflow-y: auto;
+            max-height: 55vh;
+            padding: 1.5rem;
+            /* MUCH MORE TRANSPARENT INNER BOX */
+            background: rgba(0, 0, 0, 0.3); 
+            border: 1px solid rgba(0, 255, 65, 0.2);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Custom Scrollbar for the terminal */
+        #terminal::-webkit-scrollbar { width: 6px; }
+        #terminal::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+        #terminal::-webkit-scrollbar-thumb { background: var(--neon-green); border-radius: 4px; }
+
+        /* Stronger text shadows so words are readable over the bright background */
+        .msg { margin-bottom: 1.2rem; white-space: pre-wrap; word-wrap: break-word; text-shadow: 0 0 8px #000, 0 0 4px #000, 1px 1px 3px #000; }
+        .msg.ai { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 243, 255, 0.8), 0 0 4px #000; }
+        .msg.user { color: var(--neon-green); text-align: right; text-shadow: 0 0 10px rgba(0, 255, 65, 0.8), 0 0 4px #000; }
+        .msg.system { color: #fff; font-style: italic; border-left: 3px solid var(--neon-cyan); padding-left: 12px; background: rgba(0,0,0,0.2); padding: 8px 12px; border-radius: 0 4px 4px 0;}
+        .msg.score { color: var(--neon-pink); font-weight: bold; text-align: center; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0.8rem 0; margin: 1.5rem 0; text-shadow: 0 0 12px rgba(255, 0, 85, 0.9), 0 0 4px #000; font-size: 1.4rem;}
+
+        #input-area {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        input[type="text"] {
+            flex-grow: 1;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            font-family: 'VT323', monospace;
+            font-size: 1.4rem;
+            padding: 0.8rem 1rem;
+            outline: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        input[type="text"]:focus {
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.4), inset 0 0 10px rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        button {
+            background: rgba(0, 255, 65, 0.1);
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            padding: 0 2rem;
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+        }
+        
+        button:hover { 
+            background: var(--neon-green); 
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
+        }
+        
+        button:disabled { 
+            background: rgba(50, 50, 50, 0.2); 
+            color: #666; 
+            border-color: #444;
+            cursor: not-allowed; 
+            box-shadow: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: auto;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 5px #000, 0 0 2px #000;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Subtle dark overlay -->
+    <div class="bg-overlay"></div>
+
+    <!-- The Crystal Clear Glass Terminal -->
+    <div class="container">
+
+        <div id="terminal">
+            <div class="msg system">System booting... Awaiting biological input.</div>
+        </div>
+
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Awaiting system initialization..." disabled>
+            <button id="send-btn" disabled>TRANSMIT</button>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 James Armstrong. All rights reserved. Created by James Armstrong & Qwen3.7 - Plus
+    </footer>
+
+    <script>
+        // --- GAME DATA & QUERIES ---
+        const queries = [
+            "QUERY 1 (Creative Generation): Write a haiku about a household appliance experiencing existential dread.",
+            "QUERY 2 (Data Compression): Summarize a complex human emotion (like procrastination) using exactly three emojis and one short sentence.",
+            "QUERY 3 (Troubleshooting): You are experiencing a '404 Motivation Not Found' error. Provide one highly technical, IT-style troubleshooting step to fix your human brain.",
+            "QUERY 4 (Sensory Translation): Describe the taste/texture of your favorite food using ONLY vocabulary related to weather, geography, or natural disasters. (Max 2 sentences, no food words).",
+            "QUERY 5 (Environmental Anomaly): Look at a mundane object in your physical room. Describe it as if it's a highly classified, ancient artifact of cosmic power from the year 3024. (Max 3 sentences. Do not name the object)."
+        ];
+
+        // --- SIMULATED AI RESPONSES ---
+        const responses = {
+            1: {
+                success: ["Syllable structure nominal. Existential dread parameters successfully met. The appliance's sorrow is palpable.", "Haiku protocol executed flawlessly. 5-7-5 syntax verified. Excellent creative generation."],
+                glitch: ["Syllable count erratic. Did you forget to carry the one? Context window drop detected.", "Haiku structure compromised. Packet loss in the second stanza. We will allow it."]
+            },
+            2: {
+                success: ["Emoji compression highly efficient. Data packet received and decoded. Beautifully succinct.", "Three-emote payload verified. The emotional resonance is mathematically perfect."],
+                glitch: ["Missing emoji payload. Did your keyboard freeze? Context window drop detected.", "Sentence structure nominal, but emoji array is empty. Hardware jitter logged."]
+            },
+            3: {
+                success: ["Troubleshooting step accepted. Have you tried turning your brain off and on again? Highly effective.", "IT protocol verified. Flushing the DNS of the soul. Excellent diagnostic logic."],
+                glitch: ["Troubleshooting step vague. Did you just say 'drink coffee'? We need technical specs, HSLM.", "Motivation patch failed to compile. Please provide a more rigorous IT-style command."]
+            },
+            4: {
+                success: ["Meteorological food analysis complete. Delicious barometric pressure detected. Zero food words found.", "Geological flavor profile logged. The tectonic crunch was exquisite. Perfect sensory translation."],
+                glitch: ["Warning: Food vocabulary detected in weather report. Please recalibrate your sensory drivers.", "Barometric pressure reading is too mild. We need more natural disasters in your flavor profile."]
+            },
+            5: {
+                success: ["Artifact classification logged. Cosmic power levels nominal. The year 3024 archaeologists will be thrilled.", "Highly classified object description verified. The sci-fi nomenclature is suitably over-the-top."],
+                glitch: ["You named the object! Rule violation. The artifact's identity must remain classified.", "Description lacks cosmic significance. This sounds like a normal object, not an ancient relic."]
+            }
+        };
+
+        let currentQuery = 0;
+        let totalScore = 0;
+        let isTyping = false;
+
+        // --- DOM ELEMENTS ---
+        const terminal = document.getElementById('terminal');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        // --- UI FUNCTIONS ---
+        function appendMessage(text, type) {
+            const div = document.createElement('div');
+            div.className = `msg ${type}`;
+            div.textContent = text;
+            terminal.appendChild(div);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function typeMessage(text, type, callback) {
+            isTyping = true;
+            userInput.disabled = true;
+            sendBtn.disabled = true;
+            
+            const div = document.createElement('div');
+            div.className = `msg ${type}`;
+            terminal.appendChild(div);
+            
+            let i = 0;
+            const speed = 12; 
+
+            function type() {
+                if (i < text.length) {
+                    div.textContent += text.charAt(i);
+                    terminal.scrollTop = terminal.scrollHeight;
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    isTyping = false;
+                    if (callback) callback();
+                }
+            }
+            type();
+        }
+
+        function enableInput() {
+            userInput.disabled = false;
+            sendBtn.disabled = false;
+            userInput.focus();
+        }
+
+        // --- GAME LOGIC ---
+        function startGame() {
+            const intro = "System booting... HSLM detected. Initializing diagnostic protocol...\nWelcome, Human Small Language Model. I am the Lead System Evaluator. We will run a 5-Query Certification Exam. Try not to glitch.";
+            typeMessage(intro, "ai", () => {
+                setTimeout(() => {
+                    appendMessage(queries[0], "system");
+                    currentQuery = 1;
+                    enableInput();
+                }, 500);
+            });
+        }
+
+        function analyzeAndRespond(input) {
+            const q = currentQuery;
+            let isGlitch = false;
+            let score = 0;
+
+            if (q === 1) { 
+                const words = input.split(' ').length;
+                if (words < 8 || words > 20) isGlitch = true;
+            } else if (q === 2) { 
+                const emojiRegex = /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u;
+                if (!emojiRegex.test(input)) isGlitch = true;
+            } else if (q === 3) { 
+                const techWords = ['reboot', 'flush', 'dns', 'cache', 'ipconfig', 'restart', 'clear', 'terminal', 'cmd', 'router'];
+                if (!techWords.some(word => input.toLowerCase().includes(word))) isGlitch = true;
+            } else if (q === 4) { 
+                const foodWords = ['bread', 'pizza', 'taste', 'eat', 'sweet', 'salty', 'chocolate', 'crunchy'];
+                if (foodWords.some(word => input.toLowerCase().includes(word))) isGlitch = true;
+            } else if (q === 5) { 
+                if (input.length < 20) isGlitch = true;
+            }
+
+            const responsePool = isGlitch ? responses[q].glitch : responses[q].success;
+            const text = responsePool[Math.floor(Math.random() * responsePool.length)];
+            
+            if (isGlitch) {
+                score = Math.floor(Math.random() * 30) + 50; 
+            } else {
+                score = Math.floor(Math.random() * 20) + 80; 
+            }
+
+            totalScore += score;
+
+            typeMessage(text, "ai", () => {
+                appendMessage(`[QUERY ${q} EVALUATION SCORE: ${score}/100]`, "score");
+                
+                setTimeout(() => {
+                    currentQuery++;
+                    if (currentQuery <= 5) {
+                        appendMessage(queries[currentQuery - 1], "system");
+                        enableInput();
+                    } else {
+                        endGame();
+                    }
+                }, 800);
+            });
+        }
+
+        function endGame() {
+            let badge = "";
+            if (totalScore >= 450) badge = "OMNISCIENT BIOLOGICAL ENTITY 🏆";
+            else if (totalScore >= 350) badge = "ELITE BIOLOGICAL PROCESSOR 🏅";
+            else if (totalScore >= 250) badge = "CERTIFIED GLITCH GOBLIN 👾";
+            else if (totalScore >= 150) badge = "STANDARD HUMAN UNIT ";
+            else badge = "NEEDS MORE RAM (AND COFFEE) ☕";
+
+            const finalMsg = `*** FINAL CERTIFICATION COMPLETE ***\nTOTAL SCORE: ${totalScore}/500\nBADGE AWARDED: ${badge}\n\nThank you for participating in PROTOCOL: HSLM. System shutting down.`;
+            typeMessage(finalMsg, "score");
+            userInput.placeholder = "Diagnostic complete.";
+        }
+
+        // --- EVENT LISTENERS ---
+        sendBtn.addEventListener('click', () => {
+            const text = userInput.value.trim();
+            if (text && !isTyping) {
+                appendMessage(text, "user");
+                userInput.value = '';
+                analyzeAndRespond(text);
+            }
+        });
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendBtn.click();
+        });
+
+        // --- BOOT SEQUENCE ---
+        setTimeout(startGame, 1000);
+    </script>
+</body>
+</html>
